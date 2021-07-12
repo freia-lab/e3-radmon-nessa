@@ -1,6 +1,21 @@
 # dpu3.proto for DPU3
-Terminator = 0x4;
+Terminator = 0x0D;
    
+#get_data {
+#   in "%#s";
+#}
+
 get_data {
-   in "%#s";
+   out "\n#1\$1B01\r";
+   in "\n#%s";
+}
+
+get_dose {
+   out "\n#1\$1B01\r";
+   in "\n#%*5s,%*f,%*f,%*i,%f,%*4s,";
+}
+
+get_rate {
+   out "\n#1\$1B01\r";
+   in "\n#%*5s,%f,%*f,%*i,%*f,%*4s,";
 }

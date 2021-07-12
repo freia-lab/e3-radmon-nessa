@@ -2,7 +2,8 @@
 require dpu3,0.1.0
  
 #Specify the TCP endpoint and give your 'bus' an arbitrary name eg. "asynstream1".
-drvAsynIPPortConfigure("PORT1","192.168.20.102:5000",0,0,0)
+#drvAsynIPPortConfigure("PORT1","192.168.20.102:5000",0,0,0)
+drvAsynIPPortConfigure("PORT1","127.0.0.1:5000",0,0,0)
 
 #drvAsynSerialPortConfigure ("asynport2","/dev/ttyS0")
 #asynSetOption ("asynport2", 0, "baud", "9600")
@@ -20,6 +21,7 @@ dbLoadRecords("dpu3.db", "PORT=PORT1,P=RadProt-Bunker2:")
 
 asynSetTraceIOMask "PORT1",0,4   # Enable traceIOHex
 #asynSetTraceMask "PORT1",0,0x1f     # Enable traceError and traceIODriver
+#asynSetTraceMask "PORT1",0,0xfff     # Enable traceError and traceIODriver
 
 iocInit()
 
