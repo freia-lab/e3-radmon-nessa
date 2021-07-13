@@ -1,138 +1,96 @@
-#record(waveform, "$(P)InData") {
-#   field (DESC, "Unsolicited data")
-#   field (DTYP, "stream")
-#   field (INP, "@dpu3.proto get_data $(PORT)")
-#   field (FTVL, "CHAR")
-#   field (NELM, "100")
-#   field (PINI, "YES")
-#   field (SCAN, ".2 second")
-#   field (SCAN, "I/O Intr")
-#}
-
-record(stringin, "$(P)StringInData0") {
-   field (DESC, "Data Det 0")
+record(stringin, "$(P)GD-01:sString") {
+   field (DESC, "Data GD-01")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_data(0) $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-#   field (SCAN, "I/O Intr")
+   field (SCAN, "1 second")
 }
 
-record(stringin, "$(P)StringInData1") {
-   field (DESC, "Data Det 1")
+record(stringin, "$(P)GD-02:sString") {
+   field (DESC, "Data GD-02")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_data(1) $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-#   field (SCAN, "I/O Intr")
+   field (SCAN, "1 second")
 }
 
-record(stringin, "$(P)StringInData2") {
-   field (DESC, "Data Det 2")
+record(stringin, "$(P)GD-03:sString") {
+   field (DESC, "Data GD-03")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_data(2) $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-#   field (SCAN, "I/O Intr")
+   field (SCAN, "1 second")
 }
 
-record(stringin, "$(P)StringInData3") {
-   field (DESC, "Data Det 3")
+record(stringin, "$(P)ND-01:sString") {
+   field (DESC, "Data ND-01")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_data(3) $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-#   field (SCAN, "I/O Intr")
+   field (SCAN, "1 second")
 }
 
-
-
-
-record(ai, "$(P)IntDet0-Dose") {
-   field (DESC, "Internal detector 0 dose")
+record(ai, "$(P)GD-01:sAccDose") {
+   field (DESC, "Accumulated dose")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_dose(0)  $(PORT)")
+   field (INP, "@dpu3.proto get_dose_dosrt(0,$(P)GD-01:sDoseRt)  $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv")
-#   field (SCAN, "I/O Intr")
+   field (EGU, "μSv")
+   field (SCAN, "I/O Intr")
    field(PREC, "2")
 }
 
-record(ai, "$(P)IntDet0-DoseRate") {
-   field (DESC, "Internal detector 0 dose rate")
-   field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_rate(0) $(PORT)")
-   field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv/h")
-#   field (SCAN, "I/O Intr")
+record(ai, "$(P)GD-01:sDoseRt") {
+   field (DESC, "Dose rate")
+   field (EGU, "μSv/h")
    field(PREC, "2")
 }
 
-record(ai, "$(P)ExtDet1-Dose") {
-   field (DESC, "External detector 1 dose")
+record(ai, "$(P)GD-02:sAccDose") {
+   field (DESC, "Accumulated dose IC10")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_dose(1)  $(PORT)")
+   field (INP, "@dpu3.proto get_dose_dosrt(1,$(P)GD-02:sDoseRt)  $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv")
-#   field (SCAN, "I/O Intr")
+   field (EGU, "μSv")
+   field (SCAN, "I/O Intr")
    field(PREC, "2")
 }
 
-record(ai, "$(P)ExtDet1-DoseRate") {
-   field (DESC, "External detector 1 dose rate")
-   field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_rate(1) $(PORT)")
-   field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv/h")
-#   field (SCAN, "I/O Intr")
+record(ai, "$(P)GD-02:sDoseRt") {
+   field (DESC, "Dose rate IC10")
+   field (EGU, "μSv/h")
    field(PREC, "2")
 }
 
-record(ai, "$(P)ExtDet2-Dose") {
-   field (DESC, "External detector 2 dose")
+record(ai, "$(P)GD-03:sAccDose") {
+   field (DESC, "Accumulated dose GM-42")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_dose(2)  $(PORT)")
+   field (INP, "@dpu3.proto get_dose_dosrt(2,$(P)GD-03:sDoseRt)  $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv")
-#   field (SCAN, "I/O Intr")
+   field (EGU, "μSv")
+   field (SCAN, "I/O Intr")
    field(PREC, "2")
 }
 
-record(ai, "$(P)ExtDet2-DoseRate") {
-   field (DESC, "External detector 2 dose rate")
-   field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_rate(2) $(PORT)")
-   field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv/h")
-#   field (SCAN, "I/O Intr")
+record(ai, "$(P)GD-03:sDoseRt") {
+   field (DESC, "Dose rate GM-42")
+   field (EGU, "μSv/h")
    field(PREC, "2")
 }
 
-record(ai, "$(P)ExtDet3-Dose") {
-   field (DESC, "External detector 3 dose")
+record(ai, "$(P)ND-01:sAccDose") {
+   field (DESC, "Accumulated dose LB6411")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_dose(3)  $(PORT)")
+   field (INP, "@dpu3.proto get_dose_dosrt(3,$(P)ND-01:sDoseRt)  $(PORT)")
    field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv")
-#   field (SCAN, "I/O Intr")
+   field (EGU, "μSv")
+   field (SCAN, "I/O Intr")
    field(PREC, "2")
 }
 
-record(ai, "$(P)ExtDet3-DoseRate") {
-   field (DESC, "External detector 3 dose rate")
-   field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_rate(3) $(PORT)")
-   field (PINI, "YES")
-   field (SCAN, ".2 second")
-   field (EGU, "uSv/h")
-#   field (SCAN, "I/O Intr")
+record(ai, "$(P)ND-01:sDoseRt") {
+   field (DESC, "Dose rate LB6411")
+   field (EGU, "μSv/h")
    field(PREC, "2")
 }
 
