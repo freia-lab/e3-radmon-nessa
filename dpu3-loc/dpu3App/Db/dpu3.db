@@ -94,3 +94,384 @@ record(ai, "$(P)ND-01:sDoseRt") {
    field(PREC, "2")
 }
 
+##################################
+#STATUS BITS
+##################################
+
+record(mbbiDirect, "$(P)GD-01:sStatus1") {
+   field (DESC, "Status char 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status1(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-01:sWRM_nomount")
+}
+
+record(mbbiDirect, "$(P)GD-01:sStatus2") {
+   field (DESC, "Status char 2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status2(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-01:sBckgrnd_lo")
+}
+
+record(mbbiDirect, "$(P)GD-01:sStatus3") {
+   field (DESC, "Status char 3")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status3(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-01:sRtOverflow")
+}
+
+record(bi, "$(P)GD-01:sWRM_nomount") {
+   field (DESC, "1 = WRM not mounted")
+   field (INP, "$(P)GD-01:sStatus1.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-01:sVoltage_lo")
+}
+
+record(bi, "$(P)GD-01:sVoltage_lo") {
+   field (DESC, "1 = Voltage (Battery) Low")
+   field (INP, "$(P)GD-01:sStatus1.B1")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)GD-01:sBckgrnd_lo") {
+   field (DESC, "1 = Low background")
+   field (INP, "$(P)GD-01:sStatus2.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-01:sDet_lo")
+}
+
+record(bi, "$(P)GD-01:sDet_lo") {
+   field (DESC, "1 = Low detector fault")
+   field (INP, "$(P)GD-01:sStatus2.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-01:sDet_hi")
+}
+
+record(bi, "$(P)GD-01:sDet_hi") {
+   field (DESC, "1 = High detector fault")
+   field (INP, "$(P)GD-01:sStatus2.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-01:sNoExtDet")
+}
+
+record(bi, "$(P)GD-01:sNoExtDet") {
+   field (DESC, "1 = No external detector detected")
+   field (INP, "$(P)GD-01:sStatus2.B3")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)GD-01:sRtOverflow") {
+   field (DESC, "1 = Rate overflow")
+   field (INP, "$(P)GD-01:sStatus3.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-01:sOvrThrshld")
+}
+
+record(bi, "$(P)GD-01:sOvrThrshld") {
+   field (DESC, "1 = Over threshold")
+   field (INP, "$(P)GD-01:sStatus3.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-01:sHiBckgrnd")
+}
+
+record(bi, "$(P)GD-01:sHiBckgrnd") {
+   field (DESC, "1 = High background")
+   field (INP, "$(P)GD-01:sStatus3.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-01:sLoHV")
+}
+
+record(bi, "$(P)GD-01:sLoHV") {
+   field (DESC, "1 = Low H.V")
+   field (INP, "$(P)GD-01:sStatus3.B3")
+   field (SCAN, "Passive")
+}
+
+record(mbbiDirect, "$(P)GD-02:sStatus1") {
+   field (DESC, "Status char 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status1(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-02:sWRM_nomount")
+}
+
+record(mbbiDirect, "$(P)GD-02:sStatus2") {
+   field (DESC, "Status char 2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status2(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-02:sBckgrnd_lo")
+}
+
+record(mbbiDirect, "$(P)GD-02:sStatus3") {
+   field (DESC, "Status char 3")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status3(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-02:sRtOverflow")
+}
+
+record(bi, "$(P)GD-02:sWRM_nomount") {
+   field (DESC, "1 = WRM not mounted")
+   field (INP, "$(P)GD-02:sStatus1.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-02:sVoltage_lo")
+}
+
+record(bi, "$(P)GD-02:sVoltage_lo") {
+   field (DESC, "1 = Voltage (Battery) Low")
+   field (INP, "$(P)GD-02:sStatus1.B1")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)GD-02:sBckgrnd_lo") {
+   field (DESC, "1 = Low background")
+   field (INP, "$(P)GD-02:sStatus2.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-02:sDet_lo")
+}
+
+record(bi, "$(P)GD-02:sDet_lo") {
+   field (DESC, "1 = Low detector fault")
+   field (INP, "$(P)GD-02:sStatus2.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-02:sDet_hi")
+}
+
+record(bi, "$(P)GD-02:sDet_hi") {
+   field (DESC, "1 = High detector fault")
+   field (INP, "$(P)GD-02:sStatus2.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-02:sNoExtDet")
+}
+
+record(bi, "$(P)GD-02:sNoExtDet") {
+   field (DESC, "1 = No external detector detected")
+   field (INP, "$(P)GD-02:sStatus2.B3")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)GD-02:sRtOverflow") {
+   field (DESC, "1 = Rate overflow")
+   field (INP, "$(P)GD-02:sStatus3.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-02:sOvrThrshld")
+}
+
+record(bi, "$(P)GD-02:sOvrThrshld") {
+   field (DESC, "1 = Over threshold")
+   field (INP, "$(P)GD-02:sStatus3.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-02:sHiBckgrnd")
+}
+
+record(bi, "$(P)GD-02:sHiBckgrnd") {
+   field (DESC, "1 = High background")
+   field (INP, "$(P)GD-02:sStatus3.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-02:sLoHV")
+}
+
+record(bi, "$(P)GD-02:sLoHV") {
+   field (DESC, "1 = Low H.V")
+   field (INP, "$(P)GD-02:sStatus3.B3")
+   field (SCAN, "Passive")
+}
+
+record(mbbiDirect, "$(P)GD-03:sStatus1") {
+   field (DESC, "Status char 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status1(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-03:sWRM_nomount")
+}
+
+record(mbbiDirect, "$(P)GD-03:sStatus2") {
+   field (DESC, "Status char 2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status2(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-03:sBckgrnd_lo")
+}
+
+record(mbbiDirect, "$(P)GD-03:sStatus3") {
+   field (DESC, "Status char 3")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status3(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)GD-03:sRtOverflow")
+}
+
+record(bi, "$(P)GD-03:sWRM_nomount") {
+   field (DESC, "1 = WRM not mounted")
+   field (INP, "$(P)GD-03:sStatus1.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-03:sVoltage_lo")
+}
+
+record(bi, "$(P)GD-03:sVoltage_lo") {
+   field (DESC, "1 = Voltage (Battery) Low")
+   field (INP, "$(P)GD-03:sStatus1.B1")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)GD-03:sBckgrnd_lo") {
+   field (DESC, "1 = Low background")
+   field (INP, "$(P)GD-03:sStatus2.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-03:sDet_lo")
+}
+
+record(bi, "$(P)GD-03:sDet_lo") {
+   field (DESC, "1 = Low detector fault")
+   field (INP, "$(P)GD-03:sStatus2.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-03:sDet_hi")
+}
+
+record(bi, "$(P)GD-03:sDet_hi") {
+   field (DESC, "1 = High detector fault")
+   field (INP, "$(P)GD-03:sStatus2.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-03:sNoExtDet")
+}
+
+record(bi, "$(P)GD-03:sNoExtDet") {
+   field (DESC, "1 = No external detector detected")
+   field (INP, "$(P)GD-03:sStatus2.B3")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)GD-03:sRtOverflow") {
+   field (DESC, "1 = Rate overflow")
+   field (INP, "$(P)GD-03:sStatus3.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-03:sOvrThrshld")
+}
+
+record(bi, "$(P)GD-03:sOvrThrshld") {
+   field (DESC, "1 = Over threshold")
+   field (INP, "$(P)GD-03:sStatus3.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-03:sHiBckgrnd")
+}
+
+record(bi, "$(P)GD-03:sHiBckgrnd") {
+   field (DESC, "1 = High background")
+   field (INP, "$(P)GD-03:sStatus3.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)GD-03:sLoHV")
+}
+
+record(bi, "$(P)GD-03:sLoHV") {
+   field (DESC, "1 = Low H.V")
+   field (INP, "$(P)GD-03:sStatus3.B3")
+   field (SCAN, "Passive")
+}
+
+record(mbbiDirect, "$(P)ND-01:sStatus1") {
+   field (DESC, "Status char 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status1(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)ND-01:sWRM_nomount")
+}
+
+record(mbbiDirect, "$(P)ND-01:sStatus2") {
+   field (DESC, "Status char 2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status2(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)ND-01:sBckgrnd_lo")
+}
+
+record(mbbiDirect, "$(P)ND-01:sStatus3") {
+   field (DESC, "Status char 3")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_status3(0)  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)ND-01:sRtOverflow")
+}
+
+record(bi, "$(P)ND-01:sWRM_nomount") {
+   field (DESC, "1 = WRM not mounted")
+   field (INP, "$(P)ND-01:sStatus1.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)ND-01:sVoltage_lo")
+}
+
+record(bi, "$(P)ND-01:sVoltage_lo") {
+   field (DESC, "1 = Voltage (Battery) Low")
+   field (INP, "$(P)ND-01:sStatus1.B1")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)ND-01:sBckgrnd_lo") {
+   field (DESC, "1 = Low background")
+   field (INP, "$(P)ND-01:sStatus2.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)ND-01:sDet_lo")
+}
+
+record(bi, "$(P)ND-01:sDet_lo") {
+   field (DESC, "1 = Low detector fault")
+   field (INP, "$(P)ND-01:sStatus2.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)ND-01:sDet_hi")
+}
+
+record(bi, "$(P)ND-01:sDet_hi") {
+   field (DESC, "1 = High detector fault")
+   field (INP, "$(P)ND-01:sStatus2.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)ND-01:sNoExtDet")
+}
+
+record(bi, "$(P)ND-01:sNoExtDet") {
+   field (DESC, "1 = No external detector detected")
+   field (INP, "$(P)ND-01:sStatus2.B3")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)ND-01:sRtOverflow") {
+   field (DESC, "1 = Rate overflow")
+   field (INP, "$(P)ND-01:sStatus3.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)ND-01:sOvrThrshld")
+}
+
+record(bi, "$(P)ND-01:sOvrThrshld") {
+   field (DESC, "1 = Over threshold")
+   field (INP, "$(P)ND-01:sStatus3.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)ND-01:sHiBckgrnd")
+}
+
+record(bi, "$(P)ND-01:sHiBckgrnd") {
+   field (DESC, "1 = High background")
+   field (INP, "$(P)ND-01:sStatus3.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)ND-01:sLoHV")
+}
+
+record(bi, "$(P)ND-01:sLoHV") {
+   field (DESC, "1 = Low H.V")
+   field (INP, "$(P)ND-01:sStatus3.B3")
+   field (SCAN, "Passive")
+}
+
+

@@ -9,3 +9,15 @@ get_data {
 get_dose_dosrt {
    in "\n#1\$1B09,%(\$2)f,%*f,%*i,%f,%*4s,";
 }
+
+get_status1 {
+   in "\n#1\$1B09,%*f,%*f,%*i,%*f,0%1i%*c%*c,";
+}
+
+get_status2 {
+   in "\n#1\$1B09,%*f,%*f,%*i,%*f,0%*c%1i%*c,";
+}
+
+get_status3 {
+   in "\n#1\$1B09,%*f,%*f,%*i,%*f,0%*c%*c%1i,";
+}

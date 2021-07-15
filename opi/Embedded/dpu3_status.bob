@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Nessa status</name>
+  <width>90</width>
+  <height>70</height>
+  <widget type="led" version="2.0.0">
+    <name>LED_2</name>
+    <pv_name>$(PREFIX)sVoltage_lo</pv_name>
+    <x>45</x>
+    <y>7</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 = Voltage battery low</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_3</name>
+    <pv_name>$(PREFIX)sWRM_nomount</pv_name>
+    <x>64</x>
+    <y>7</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <labels_from_pv>true</labels_from_pv>
+    <tooltip>1 = WRM not mounted</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_4</name>
+    <pv_name>$(PREFIX)sNoExtDet</pv_name>
+    <x>9</x>
+    <y>25</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 = No external detector detected</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_5</name>
+    <pv_name>$(PREFIX)sDet_hi</pv_name>
+    <x>27</x>
+    <y>25</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 = High detector fault</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_6</name>
+    <pv_name>$(PREFIX)sDet_lo</pv_name>
+    <x>45</x>
+    <y>25</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 =Low detector fault</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_7</name>
+    <pv_name>$(PREFIX)sBckgrnd_lo</pv_name>
+    <x>64</x>
+    <y>25</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1= Low background</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_8</name>
+    <pv_name>$(PREFIX)sLoHV</pv_name>
+    <x>9</x>
+    <y>44</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 = Low H.V</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_9</name>
+    <pv_name>$(PREFIX)sHiBckgrnd</pv_name>
+    <x>27</x>
+    <y>44</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 = High background</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_10</name>
+    <pv_name>$(PREFIX)sOvrThrshld</pv_name>
+    <x>45</x>
+    <y>44</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 = Over threshold</tooltip>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED_11</name>
+    <pv_name>$(PREFIX)sRtOverflow</pv_name>
+    <x>64</x>
+    <y>44</y>
+    <width>15</width>
+    <height>15</height>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <tooltip>1 = Rate overflow</tooltip>
+  </widget>
+</display>
