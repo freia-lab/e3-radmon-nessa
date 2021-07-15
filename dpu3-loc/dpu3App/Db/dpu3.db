@@ -30,6 +30,14 @@ record(stringin, "$(P)ND-01:sString") {
    field (SCAN, "1 second")
 }
 
+record(stringin, "$(P)GD-01:sDevId") {
+   field (DESC, "Device ID")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_did(0) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
+}
+
 record(ai, "$(P)GD-01:sAccDose") {
    field (DESC, "Accumulated dose")
    field (DTYP, "stream")
@@ -74,6 +82,14 @@ record(ai, "$(P)GD-01:sThrUsr") {
    field (INP, "@dpu3.proto get_threshold(0,c)  $(PORT)")
    field (SCAN, "1 second")
    field (PINI, "YES")
+}
+
+record(stringin, "$(P)GD-02:sDevId") {
+   field (DESC, "Device ID")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_did(1) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
 }
 
 record(ai, "$(P)GD-02:sAccDose") {
@@ -122,6 +138,14 @@ record(ai, "$(P)GD-02:sThrUsr") {
    field (PINI, "YES")
 }
 
+record(stringin, "$(P)GD-03:sDevId") {
+   field (DESC, "Device ID")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_did(2) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
+}
+
 record(ai, "$(P)GD-03:sAccDose") {
    field (DESC, "Accumulated dose GM-42")
    field (DTYP, "stream")
@@ -166,6 +190,14 @@ record(ai, "$(P)GD-03:sThrUsr") {
    field (INP, "@dpu3.proto get_threshold(2,c)  $(PORT)")
    field (SCAN, "1 second")
    field (PINI, "YES")
+}
+
+record(stringin, "$(P)ND-01:sDevId") {
+   field (DESC, "Device ID")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_did(3) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
 }
 
 record(ai, "$(P)ND-01:sAccDose") {

@@ -6,6 +6,11 @@ get_data {
    in "\n#1\$1B09%s";
 }
 
+get_did {
+   out "\n#1\$1A01\r";
+   in "\n#1\$1A09,%*3s,%s";
+}
+
 get_dose_dosrt {
    in "\n#1\$1B09,%(\$2)f,%*f,%*i,%f,%*4s,";
 }
