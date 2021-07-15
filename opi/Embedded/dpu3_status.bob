@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>Nessa status</name>
-  <width>90</width>
-  <height>70</height>
+  <width>600</width>
+  <height>250</height>
   <widget type="led" version="2.0.0">
     <name>LED_2</name>
     <pv_name>$(PREFIX)sVoltage_lo</pv_name>
-    <x>45</x>
-    <y>7</y>
+    <x>46</x>
+    <y>49</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -19,8 +19,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_3</name>
     <pv_name>$(PREFIX)sWRM_nomount</pv_name>
-    <x>64</x>
-    <y>7</y>
+    <x>65</x>
+    <y>49</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -33,8 +33,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_4</name>
     <pv_name>$(PREFIX)sNoExtDet</pv_name>
-    <x>9</x>
-    <y>25</y>
+    <x>10</x>
+    <y>67</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -46,8 +46,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_5</name>
     <pv_name>$(PREFIX)sDet_hi</pv_name>
-    <x>27</x>
-    <y>25</y>
+    <x>28</x>
+    <y>67</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -59,8 +59,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_6</name>
     <pv_name>$(PREFIX)sDet_lo</pv_name>
-    <x>45</x>
-    <y>25</y>
+    <x>46</x>
+    <y>67</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -72,8 +72,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_7</name>
     <pv_name>$(PREFIX)sBckgrnd_lo</pv_name>
-    <x>64</x>
-    <y>25</y>
+    <x>65</x>
+    <y>67</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -85,8 +85,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_8</name>
     <pv_name>$(PREFIX)sLoHV</pv_name>
-    <x>9</x>
-    <y>44</y>
+    <x>10</x>
+    <y>86</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -98,8 +98,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_9</name>
     <pv_name>$(PREFIX)sHiBckgrnd</pv_name>
-    <x>27</x>
-    <y>44</y>
+    <x>28</x>
+    <y>86</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -111,8 +111,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_10</name>
     <pv_name>$(PREFIX)sOvrThrshld</pv_name>
-    <x>45</x>
-    <y>44</y>
+    <x>46</x>
+    <y>86</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -124,8 +124,8 @@
   <widget type="led" version="2.0.0">
     <name>LED_11</name>
     <pv_name>$(PREFIX)sRtOverflow</pv_name>
-    <x>64</x>
-    <y>44</y>
+    <x>65</x>
+    <y>86</y>
     <width>15</width>
     <height>15</height>
     <on_color>
@@ -133,5 +133,150 @@
       </color>
     </on_color>
     <tooltip>1 = Rate overflow</tooltip>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_4</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sAccDose</PV_NAME>
+    </macros>
+    <x>91</x>
+    <y>49</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_31</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_32</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_5</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sDoseRt</PV_NAME>
+    </macros>
+    <x>91</x>
+    <y>89</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_33</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_34</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_12</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sString</PV_NAME>
+    </macros>
+    <x>9</x>
+    <y>10</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_47</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_48</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+      <width>200</width>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_16</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sThr1</PV_NAME>
+    </macros>
+    <x>91</x>
+    <y>132</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_55</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_56</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_17</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sThr2</PV_NAME>
+    </macros>
+    <x>91</x>
+    <y>172</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_57</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_58</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group_18</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sThrUsr</PV_NAME>
+    </macros>
+    <x>91</x>
+    <y>212</y>
+    <width>385</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_59</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>280</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_60</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>285</x>
+    </widget>
   </widget>
 </display>

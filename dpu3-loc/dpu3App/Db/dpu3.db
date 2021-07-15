@@ -46,6 +46,36 @@ record(ai, "$(P)GD-01:sDoseRt") {
    field(PREC, "2")
 }
 
+record(ai, "$(P)GD-01:sThr1") {
+   field (DESC, "Threshold 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(0,a)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+}
+
+record(ai, "$(P)GD-01:sThr2") {
+   field (DESC, "Threshold 2")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(0,b)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
+record(ai, "$(P)GD-01:sThrUsr") {
+   field (DESC, "User threshold")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(0,c)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
 record(ai, "$(P)GD-02:sAccDose") {
    field (DESC, "Accumulated dose IC10")
    field (DTYP, "stream")
@@ -60,6 +90,36 @@ record(ai, "$(P)GD-02:sDoseRt") {
    field (DESC, "Dose rate IC10")
    field (EGU, "μSv/h")
    field(PREC, "2")
+}
+
+record(ai, "$(P)GD-02:sThr1") {
+   field (DESC, "Threshold 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(1,a)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+}
+
+record(ai, "$(P)GD-02:sThr2") {
+   field (DESC, "Threshold 2")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(1,b)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
+record(ai, "$(P)GD-02:sThrUsr") {
+   field (DESC, "User threshold")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(1,c)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
 }
 
 record(ai, "$(P)GD-03:sAccDose") {
@@ -78,6 +138,36 @@ record(ai, "$(P)GD-03:sDoseRt") {
    field(PREC, "2")
 }
 
+record(ai, "$(P)GD-03:sThr1") {
+   field (DESC, "Threshold 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(2,a)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+}
+
+record(ai, "$(P)GD-03:sThr2") {
+   field (DESC, "Threshold 2")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(2,b)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
+record(ai, "$(P)GD-03:sThrUsr") {
+   field (DESC, "User threshold")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(2,c)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
 record(ai, "$(P)ND-01:sAccDose") {
    field (DESC, "Accumulated dose LB6411")
    field (DTYP, "stream")
@@ -92,6 +182,36 @@ record(ai, "$(P)ND-01:sDoseRt") {
    field (DESC, "Dose rate LB6411")
    field (EGU, "μSv/h")
    field(PREC, "2")
+}
+
+record(ai, "$(P)ND-01:sThr1") {
+   field (DESC, "Threshold 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(3,a)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+}
+
+record(ai, "$(P)ND-01:sThr2") {
+   field (DESC, "Threshold 2")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(3,b)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
+record(ai, "$(P)ND-01:sThrUsr") {
+   field (DESC, "User threshold")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_threshold(3,c)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
 }
 
 ##################################

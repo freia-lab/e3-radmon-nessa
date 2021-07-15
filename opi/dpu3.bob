@@ -2,308 +2,16 @@
 <display version="2.0.0">
   <name>NESSA</name>
   <width>1200</width>
-  <widget type="group" version="2.0.0">
-    <name>Group_4</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-01:sAccDose</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>70</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_31</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_32</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_5</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-01:sDoseRt</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>110</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_33</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_34</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_6</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-02:sAccDose</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>150</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_35</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_36</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_7</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-02:sDoseRt</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>190</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_37</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_38</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_8</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-03:sAccDose</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>230</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_39</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_40</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_9</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-03:sDoseRt</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>270</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_41</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_42</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_10</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:ND-01:sAccDose</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>310</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_43</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_44</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_11</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:ND-01:sDoseRt</PV_NAME>
-    </macros>
-    <x>150</x>
-    <y>350</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_45</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_46</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_12</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-01:sString</PV_NAME>
-    </macros>
-    <x>630</x>
-    <y>90</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_47</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_48</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-      <width>300</width>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_13</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-03:sString</PV_NAME>
-    </macros>
-    <x>630</x>
-    <y>252</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_49</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_50</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-      <width>300</width>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_14</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:ND-01:sString</PV_NAME>
-    </macros>
-    <x>630</x>
-    <y>330</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_51</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_52</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-      <width>300</width>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Group_15</name>
-    <macros>
-      <PV_NAME>RadProt-Bunker2:GD-02:sString</PV_NAME>
-    </macros>
-    <x>630</x>
-    <y>170</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_53</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_54</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-      <width>300</width>
-    </widget>
-  </widget>
+  <height>550</height>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <macros>
       <PREFIX>RadProt-Bunker2:GD-01:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
-    <x>40</x>
-    <y>68</y>
-    <width>90</width>
-    <height>70</height>
+    <y>5</y>
+    <width>600</width>
+    <height>250</height>
     <resize>2</resize>
   </widget>
   <widget type="embedded" version="2.0.0">
@@ -312,10 +20,10 @@
       <PREFIX>RadProt-Bunker2:GD-02:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
-    <x>40</x>
-    <y>145</y>
-    <width>90</width>
-    <height>70</height>
+    <x>590</x>
+    <y>5</y>
+    <width>600</width>
+    <height>250</height>
     <resize>2</resize>
   </widget>
   <widget type="embedded" version="2.0.0">
@@ -324,10 +32,9 @@
       <PREFIX>RadProt-Bunker2:GD-03:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
-    <x>40</x>
-    <y>226</y>
-    <width>90</width>
-    <height>70</height>
+    <y>281</y>
+    <width>600</width>
+    <height>250</height>
     <resize>2</resize>
   </widget>
   <widget type="embedded" version="2.0.0">
@@ -336,10 +43,10 @@
       <PREFIX>RadProt-Bunker2:ND-01:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
-    <x>40</x>
-    <y>307</y>
-    <width>90</width>
-    <height>70</height>
+    <x>590</x>
+    <y>281</y>
+    <width>600</width>
+    <height>250</height>
     <resize>2</resize>
   </widget>
 </display>

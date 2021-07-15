@@ -10,6 +10,11 @@ get_dose_dosrt {
    in "\n#1\$1B09,%(\$2)f,%*f,%*i,%f,%*4s,";
 }
 
+get_threshold {
+   out "\n#1\$1F\$21\r";
+   in "\n#1\$1F\$29,%f";
+}
+
 get_status1 {
    in "\n#1\$1B09,%*f,%*f,%*i,%*f,0%1i%*c%*c,";
 }
