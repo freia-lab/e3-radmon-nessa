@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>NESSA</name>
-  <width>1200</width>
+  <width>2000</width>
   <height>550</height>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
@@ -10,7 +10,7 @@
     </macros>
     <file>Embedded/dpu3_status.bob</file>
     <y>5</y>
-    <width>600</width>
+    <width>500</width>
     <height>250</height>
     <resize>2</resize>
   </widget>
@@ -20,9 +20,9 @@
       <PREFIX>RadProt-Bunker2:GD-02:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
-    <x>590</x>
+    <x>520</x>
     <y>5</y>
-    <width>600</width>
+    <width>500</width>
     <height>250</height>
     <resize>2</resize>
   </widget>
@@ -33,7 +33,7 @@
     </macros>
     <file>Embedded/dpu3_status.bob</file>
     <y>281</y>
-    <width>600</width>
+    <width>500</width>
     <height>250</height>
     <resize>2</resize>
   </widget>
@@ -43,9 +43,9 @@
       <PREFIX>RadProt-Bunker2:ND-01:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
-    <x>590</x>
+    <x>520</x>
     <y>281</y>
-    <width>600</width>
+    <width>500</width>
     <height>250</height>
     <resize>2</resize>
   </widget>

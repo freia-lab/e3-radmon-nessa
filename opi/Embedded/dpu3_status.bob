@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>Nessa status</name>
-  <width>600</width>
+  <width>500</width>
   <height>250</height>
   <widget type="led" version="2.0.0">
     <name>LED_2</name>
@@ -183,31 +183,6 @@
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
-    <name>Group_12</name>
-    <macros>
-      <PV_NAME>$(PREFIX)sString</PV_NAME>
-    </macros>
-    <x>9</x>
-    <y>10</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_47</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_48</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-      <width>200</width>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
     <name>Group_16</name>
     <macros>
       <PV_NAME>$(PREFIX)sThr1</PV_NAME>
@@ -277,6 +252,47 @@
       <name>Text Update_60</name>
       <pv_name>$(PV_NAME)</pv_name>
       <x>285</x>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>dpu3_devid.bob</file>
+        <target>window</target>
+        <description>Open Display</description>
+      </action>
+    </actions>
+    <text>Device ID</text>
+    <x>7</x>
+    <y>111</y>
+    <width>70</width>
+    <height>32</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <macros>
+      <PV_NAME>$(PREFIX)sString</PV_NAME>
+    </macros>
+    <x>9</x>
+    <y>10</y>
+    <width>467</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_47</name>
+      <pv_name>$(PV_NAME).DESC</pv_name>
+      <width>251</width>
+      <height>22</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_48</name>
+      <pv_name>$(PV_NAME)</pv_name>
+      <x>277</x>
+      <width>190</width>
     </widget>
   </widget>
 </display>

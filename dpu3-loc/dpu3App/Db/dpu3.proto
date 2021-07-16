@@ -1,23 +1,35 @@
 # dpu3.proto for DPU3
 Terminator = 0x0D;
-   
+
+
+#DEVICE ID
+
+get_dev_ver {
+   out "\n#1\$1A01\r";
+   in "\n#1\$1A09,%*3s,%f,%*10s,%*6s,%*i";
+}
+
+get_dev_ser {
+   in "\n#1\$1A09,%*3s,%*f,%10s,%*6s,%*i";
+}
+
+get_dev_comm_ser {
+   in "\n#1\$1A09,%*3s,%*f,%*10s,%6s,%*i";
+}
+
+get_dev_measu {
+   in "\n#1\$1A09,%*3s,%*f,%*10s,%*6s,%i";
+}
+
+#CURRENT READING
+
 get_data {
    out "\n#1\$1B01\r";
    in "\n#1\$1B09%s";
 }
 
-get_did {
-   out "\n#1\$1A01\r";
-   in "\n#1\$1A09,%*3s,%s";
-}
-
 get_dose_dosrt {
    in "\n#1\$1B09,%(\$2)f,%*f,%*i,%f,%*4s,";
-}
-
-get_threshold {
-   out "\n#1\$1F\$21\r";
-   in "\n#1\$1F\$29,%f";
 }
 
 get_status1 {
@@ -30,4 +42,11 @@ get_status2 {
 
 get_status3 {
    in "\n#1\$1B09,%*f,%*f,%*i,%*f,0%*c%*c%1i,";
+}
+
+#THRESHOLDS
+
+get_threshold {
+   out "\n#1\$1F\$21\r";
+   in "\n#1\$1F\$29,%f";
 }

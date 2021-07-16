@@ -30,12 +30,37 @@ record(stringin, "$(P)ND-01:sString") {
    field (SCAN, "1 second")
 }
 
-record(stringin, "$(P)GD-01:sDevId") {
-   field (DESC, "Device ID")
+record(ai, "$(P)GD-01:sDevVer") {
+   field (DESC, "Detectorboard FW version number")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_did(0) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_ver(0) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "1 second")
+   field (PREC, "2")
+}
+
+record(stringin, "$(P)GD-01:sDevSer") {
+   field (DESC, "Serial number")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_ser(0) $(PORT)")
+   field (PINI, "YES")   
+   field (SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)GD-01:sDevCommSer") {
+   field (DESC, "Communication Serial Number (WRM) ")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_comm_ser(0) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)GD-01:sDevMeas") {
+   field (DESC, "Measuring units")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_measu(0) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
 }
 
 record(ai, "$(P)GD-01:sAccDose") {
@@ -84,12 +109,37 @@ record(ai, "$(P)GD-01:sThrUsr") {
    field (PINI, "YES")
 }
 
-record(stringin, "$(P)GD-02:sDevId") {
-   field (DESC, "Device ID")
+record(ai, "$(P)GD-02:sDevVer") {
+   field (DESC, "Detectorboard FW version number")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_did(1) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_ver(1) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "1 second")
+   field (PREC, "2")
+}
+
+record(stringin, "$(P)GD-02:sDevSer") {
+   field (DESC, "Serial number")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_ser(1) $(PORT)")
+   field (PINI, "YES")   
+   field (SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)GD-02:sDevCommSer") {
+   field (DESC, "Communication Serial Number (WRM) ")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_comm_ser(1) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)GD-02:sDevMeas") {
+   field (DESC, "Measuring units")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_measu(1) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
 }
 
 record(ai, "$(P)GD-02:sAccDose") {
@@ -138,12 +188,37 @@ record(ai, "$(P)GD-02:sThrUsr") {
    field (PINI, "YES")
 }
 
-record(stringin, "$(P)GD-03:sDevId") {
-   field (DESC, "Device ID")
+record(ai, "$(P)GD-03:sDevVer") {
+   field (DESC, "Detectorboard FW version number")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_did(2) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_ver(2) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "1 second")
+   field (PREC, "2")
+}
+
+record(stringin, "$(P)GD-03:sDevSer") {
+   field (DESC, "Serial number")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_ser(2) $(PORT)")
+   field (PINI, "YES")   
+   field (SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)GD-03:sDevCommSer") {
+   field (DESC, "Communication Serial Number (WRM) ")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_comm_ser(2) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)GD-03:sDevMeas") {
+   field (DESC, "Measuring units")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_measu(2) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
 }
 
 record(ai, "$(P)GD-03:sAccDose") {
@@ -192,12 +267,37 @@ record(ai, "$(P)GD-03:sThrUsr") {
    field (PINI, "YES")
 }
 
-record(stringin, "$(P)ND-01:sDevId") {
-   field (DESC, "Device ID")
+record(ai, "$(P)ND-01:sDevVer") {
+   field (DESC, "Detectorboard FW version number")
    field (DTYP, "stream")
-   field (INP, "@dpu3.proto get_did(3) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_ver(3) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "1 second")
+   field (PREC, "2")
+}
+
+record(stringin, "$(P)ND-01:sDevSer") {
+   field (DESC, "Serial number")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_ser(3) $(PORT)")
+   field (PINI, "YES")   
+   field (SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)ND-01:sDevCommSer") {
+   field (DESC, "Communication Serial Number (WRM) ")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_comm_ser(3) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)ND-01:sDevMeas") {
+   field (DESC, "Measuring units")
+   field (DTYP, "stream")
+   field (INP, "@dpu3.proto get_dev_measu(3) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
 }
 
 record(ai, "$(P)ND-01:sAccDose") {
