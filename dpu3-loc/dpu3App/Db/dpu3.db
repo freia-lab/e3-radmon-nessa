@@ -55,12 +55,17 @@ record(stringin, "$(P)GD-01:sDevCommSer") {
    field (SCAN, "I/O Intr")
 }
 
-record(ai, "$(P)GD-01:sDevMeas") {
+record(mbbi, "$(P)GD-01:sDevMeas") {
    field (DESC, "Measuring units")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_dev_measu(0) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
+   field (ONST, "mR/h")
+   field (TWST, "μSv/h")
+   field (THST, "μR/h")   
+   field (FRST, "CPS")
+   field (FVST, "CPM")
 }
 
 record(ai, "$(P)GD-01:sAccDose") {
@@ -134,12 +139,17 @@ record(stringin, "$(P)GD-02:sDevCommSer") {
    field (SCAN, "I/O Intr")
 }
 
-record(ai, "$(P)GD-02:sDevMeas") {
+record(mbbi, "$(P)GD-02:sDevMeas") {
    field (DESC, "Measuring units")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_dev_measu(1) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
+   field (ONST, "mR/h")
+   field (TWST, "μSv/h")
+   field (THST, "μR/h")   
+   field (FRST, "CPS")
+   field (FVST, "CPM")
 }
 
 record(ai, "$(P)GD-02:sAccDose") {
@@ -213,12 +223,17 @@ record(stringin, "$(P)GD-03:sDevCommSer") {
    field (SCAN, "I/O Intr")
 }
 
-record(ai, "$(P)GD-03:sDevMeas") {
+record(mbbi, "$(P)GD-03:sDevMeas") {
    field (DESC, "Measuring units")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_dev_measu(2) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
+   field (ONST, "mR/h")
+   field (TWST, "μSv/h")
+   field (THST, "μR/h")   
+   field (FRST, "CPS")
+   field (FVST, "CPM")
 }
 
 record(ai, "$(P)GD-03:sAccDose") {
@@ -292,12 +307,17 @@ record(stringin, "$(P)ND-01:sDevCommSer") {
    field (SCAN, "I/O Intr")
 }
 
-record(ai, "$(P)ND-01:sDevMeas") {
+record(mbbi, "$(P)ND-01:sDevMeas") {
    field (DESC, "Measuring units")
    field (DTYP, "stream")
    field (INP, "@dpu3.proto get_dev_measu(3) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
+   field (ONST, "mR/h")
+   field (TWST, "μSv/h")
+   field (THST, "μR/h")   
+   field (FRST, "CPS")
+   field (FVST, "CPM")
 }
 
 record(ai, "$(P)ND-01:sAccDose") {
