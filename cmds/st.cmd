@@ -1,9 +1,8 @@
 #require stream,2.8.10
-require dpu3,0.1.0
+require dpu3,1.0.0
  
 #Specify the TCP endpoint and give your 'bus' an arbitrary name eg. "asynstream1".
-#drvAsynIPPortConfigure("PORT1","192.168.20.102:5000",0,0,0)
-drvAsynIPPortConfigure("PORT1","127.0.0.1:5000",0,0,0)
+drvAsynIPPortConfigure("PORT1","192.168.20.102:5000",0,0,0)
 
 #drvAsynSerialPortConfigure ("asynport2","/dev/ttyS0")
 #asynSetOption ("asynport2", 0, "baud", "9600")
