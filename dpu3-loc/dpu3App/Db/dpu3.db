@@ -76,7 +76,12 @@ record(ai, "$(P)GD-01:sAccDose") {
 record(ai, "$(P)GD-01:sDoseRt") {
    field (DESC, "Dose rate")
    field (EGU, "μSv/h")
-   field(PREC, "2")
+   field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "1.0")
+   info (autosaveFields, "HIGH HIHI")
 }
 
 record(ai, "$(P)GD-01:sThr1") {
@@ -155,7 +160,12 @@ record(ai, "$(P)GD-02:sAccDose") {
 record(ai, "$(P)GD-02:sDoseRt") {
    field (DESC, "Dose rate IC10")
    field (EGU, "μSv/h")
-   field(PREC, "2")
+   field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "1.0")
+   info (autosaveFields, "HIGH HIHI")
 }
 
 record(ai, "$(P)GD-02:sThr1") {
@@ -234,7 +244,12 @@ record(ai, "$(P)GD-03:sAccDose") {
 record(ai, "$(P)GD-03:sDoseRt") {
    field (DESC, "Dose rate GM-42")
    field (EGU, "μSv/h")
-   field(PREC, "2")
+   field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "1.0")
+   info (autosaveFields, "HIGH HIHI")
 }
 
 record(ai, "$(P)GD-03:sThr1") {
@@ -313,7 +328,12 @@ record(ai, "$(P)ND-01:sAccDose") {
 record(ai, "$(P)ND-01:sDoseRt") {
    field (DESC, "Dose rate LB6411")
    field (EGU, "μSv/h")
-   field(PREC, "2")
+   field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "1.0")
+   info (autosaveFields, "HIGH HIHI")
 }
 
 record(ai, "$(P)ND-01:sThr1") {
