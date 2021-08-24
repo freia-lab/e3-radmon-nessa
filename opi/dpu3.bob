@@ -49,4 +49,12 @@
     <height>250</height>
     <resize>2</resize>
   </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_4</name>
+    <file>Embedded/limits.bob</file>
+    <x>1060</x>
+    <y>80</y>
+    <width>530</width>
+    <height>360</height>
+  </widget>
 </display>
