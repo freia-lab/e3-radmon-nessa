@@ -25,7 +25,8 @@ asynSetTraceIOMask "PORT1",0,4   # Enable traceIOHex
 #asynSetTraceMask "PORT1",0,0xfff     # Enable traceError and traceIODriver
 
 epicsEnvSet("TOP", "/opt/epics/autosave")
-epicsEnvSet("IOCNAME", "radmon-nessa")
+epicsEnvSet("IOCNAME", "RadProt-Bunker2")
+epicsEnvSet("IOCDIR", "radmon-nessa")
 
 iocshLoad("$(autosave_DIR)/autosave.iocsh", "AS_TOP=$(TOP),IOCNAME=$(IOCNAME)")
 
