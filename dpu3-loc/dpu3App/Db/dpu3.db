@@ -71,6 +71,8 @@ record(ai, "$(P)GD-01:sAccDose") {
    field (EGU, "μSv")
    field (SCAN, "I/O Intr")
    field(PREC, "2")
+   field (ADEL, "1.0")
+   info (autosaveFields, "ADEL")
 }
 
 record(ai, "$(P)GD-01:sDoseRt") {
@@ -80,8 +82,8 @@ record(ai, "$(P)GD-01:sDoseRt") {
    field (HSV, "MINOR")
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
-   field (ADEL, "1.0")
-   info (autosaveFields, "HIGH HIHI")
+   field (ADEL, "0.5")
+   info (autosaveFields, "HIGH HIHI ADEL")
 }
 
 record(ai, "$(P)GD-01:sThr1") {
@@ -155,6 +157,8 @@ record(ai, "$(P)GD-02:sAccDose") {
    field (EGU, "μSv")
    field (SCAN, "I/O Intr")
    field(PREC, "2")
+   field (ADEL, "1.0")
+   info (autosaveFields, "ADEL")
 }
 
 record(ai, "$(P)GD-02:sDoseRt") {
@@ -164,8 +168,8 @@ record(ai, "$(P)GD-02:sDoseRt") {
    field (HSV, "MINOR")
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
-   field (ADEL, "1.0")
-   info (autosaveFields, "HIGH HIHI")
+   field (ADEL, "0.5")
+   info (autosaveFields, "HIGH HIHI ADEL")
 }
 
 record(ai, "$(P)GD-02:sThr1") {
@@ -239,6 +243,8 @@ record(ai, "$(P)GD-03:sAccDose") {
    field (EGU, "μSv")
    field (SCAN, "I/O Intr")
    field(PREC, "2")
+   field (ADEL, "1.0")
+   info (autosaveFields, "ADEL")
 }
 
 record(ai, "$(P)GD-03:sDoseRt") {
@@ -248,8 +254,8 @@ record(ai, "$(P)GD-03:sDoseRt") {
    field (HSV, "MINOR")
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
-   field (ADEL, "1.0")
-   info (autosaveFields, "HIGH HIHI")
+   field (ADEL, "0.5")
+   info (autosaveFields, "HIGH HIHI ADEL")
 }
 
 record(ai, "$(P)GD-03:sThr1") {
@@ -323,6 +329,8 @@ record(ai, "$(P)ND-01:sAccDose") {
    field (EGU, "μSv")
    field (SCAN, "I/O Intr")
    field(PREC, "2")
+   field (ADEL, "1.0")
+   info (autosaveFields, "ADEL")
 }
 
 record(ai, "$(P)ND-01:sDoseRt") {
@@ -332,8 +340,8 @@ record(ai, "$(P)ND-01:sDoseRt") {
    field (HSV, "MINOR")
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
-   field (ADEL, "1.0")
-   info (autosaveFields, "HIGH HIHI")
+   field (ADEL, "0.5")
+   info (autosaveFields, "HIGH HIHI ADEL")
 }
 
 record(ai, "$(P)ND-01:sThr1") {
