@@ -72,6 +72,8 @@ record(ai, "$(P)GD-01:sAccDose") {
    field (SCAN, "I/O Intr")
    field(PREC, "2")
    field (ADEL, "1.0")
+   field(SDIS, "$(P)GD-01:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "ADEL")
 }
 
@@ -83,6 +85,8 @@ record(ai, "$(P)GD-01:sDoseRt") {
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
    field (ADEL, "0.5")
+   field(SDIS, "$(P)GD-01:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "HIGH HIHI ADEL")
 }
 
@@ -158,6 +162,8 @@ record(ai, "$(P)GD-02:sAccDose") {
    field (SCAN, "I/O Intr")
    field(PREC, "2")
    field (ADEL, "1.0")
+   field(SDIS, "$(P)GD-02:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "ADEL")
 }
 
@@ -169,6 +175,8 @@ record(ai, "$(P)GD-02:sDoseRt") {
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
    field (ADEL, "0.5")
+   field(SDIS, "$(P)GD-02:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "HIGH HIHI ADEL")
 }
 
@@ -244,6 +252,8 @@ record(ai, "$(P)GD-03:sAccDose") {
    field (SCAN, "I/O Intr")
    field(PREC, "2")
    field (ADEL, "1.0")
+   field(SDIS, "$(P)GD-03:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "ADEL")
 }
 
@@ -255,6 +265,8 @@ record(ai, "$(P)GD-03:sDoseRt") {
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
    field (ADEL, "0.5")
+   field(SDIS, "$(P)GD-03:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "HIGH HIHI ADEL")
 }
 
@@ -330,6 +342,8 @@ record(ai, "$(P)ND-01:sAccDose") {
    field (SCAN, "I/O Intr")
    field(PREC, "2")
    field (ADEL, "1.0")
+   field(SDIS, "$(P)ND-01:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "ADEL")
 }
 
@@ -341,6 +355,8 @@ record(ai, "$(P)ND-01:sDoseRt") {
    field (HHSV, "MAJOR")
    field (HYST, "2.0")
    field (ADEL, "0.5")
+   field(SDIS, "$(P)ND-01:sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
    info (autosaveFields, "HIGH HIHI ADEL")
 }
 
@@ -755,3 +771,18 @@ record(bi, "$(P)ND-01:sLoHV") {
 }
 
 
+
+##################################
+# Helper records
+##################################
+
+record (fanout, "$(P)sDose-PROC") {
+   field(SCAN, "1 second")
+   field(LNK0, "$(P)GD-01:sDoseRt")
+   field(LNK1, "$(P)GD-02:sDoseRt")
+   field(LNK2, "$(P)GD-03:sDoseRt")
+   field(LNK3, "$(P)ND-01:sDoseRt")
+   field(SDI8, "ioc02-dpu3:asynRec.CNCT" NPP NMS")
+   field(DISV, "1") # Will disable when connected
+   field(FLNK, "$(P)GD-01:sDoseRt")
+}
