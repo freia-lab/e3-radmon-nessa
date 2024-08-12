@@ -9,7 +9,7 @@ OPI_VERSION := 1.1.1
 OPI_DIRNAME := radprot-nessa
 
 
-STREAM_DEP_VERSION:=2.8.22+0
+STREAM_DEP_VERSION:=2.8.24+1
 
 -include $(TOP)/configure/CONFIG_OPTIONS
 -include $(TOP)/configure/CONFIG_MODULE.local

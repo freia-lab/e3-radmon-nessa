@@ -10,6 +10,7 @@
 core.*
 *-loc/*.Makefile
 dpu3/*.Makefile
+dpu3/O.*
 cellMods/
 testMods*/
 *PVs.list
