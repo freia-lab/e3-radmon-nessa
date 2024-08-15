@@ -782,7 +782,7 @@ record (fanout, "$(P)sDose-PROC") {
    field(LNK1, "$(P)GD-02:sDoseRt")
    field(LNK2, "$(P)GD-03:sDoseRt")
    field(LNK3, "$(P)ND-01:sDoseRt")
-   field(SDI8, "ioc02-dpu3:asynRec.CNCT" NPP NMS")
+   field(SDIS, "ioc02-dpu3:asynRec.CNCT NPP NMS")
    field(DISV, "1") # Will disable when connected
    field(FLNK, "$(P)GD-01:sDoseRt")
 }
