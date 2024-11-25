@@ -35,14 +35,14 @@ APPSRC := $(APP)/src
 #     HEADERS += $(APPSRC)/library.h
 #     USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 
-TEMPLATES += $(wildcard $(APPDB)/*.db)
+#TEMPLATES += $(wildcard $(APPDB)/*.db)
 TEMPLATES += $(wildcard $(APPDB)/*.proto)
-TEMPLATES += $(wildcard $(APPDB)/*.template)
+#TEMPLATES += $(wildcard $(APPDB)/*.template)
 
 SCRIPTS += $(wildcard ../iocsh/*.iocsh)
 
 SUBS = $(wildcard $(APPDB)/*.substitutions)
-TMPS = $(wildcard $(APPDB)/*.template)
+#TMPS = $(wildcard $(APPDB)/*.template)
 
 USR_DBFLAGS += -I . -I ..
 USR_DBFLAGS += -I $(EPICS_BASE)/db

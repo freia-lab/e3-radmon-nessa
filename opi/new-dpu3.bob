@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-11-25 15:57:15 by konrad-->
 <display version="2.0.0">
-  <name>NESSA</name>
+  <name>New DPU3</name>
   <width>2000</width>
   <height>550</height>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <macros>
-      <PREFIX>RadProt-Bunker2:GD-01:</PREFIX>
+      <PREFIX>RadProt-Aux:GD-00:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
     <y>5</y>
@@ -17,7 +18,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_1</name>
     <macros>
-      <PREFIX>RadProt-Bunker2:GD-02:</PREFIX>
+      <PREFIX>RadProt-Aux:GD-01:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
     <x>520</x>
@@ -29,7 +30,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_2</name>
     <macros>
-      <PREFIX>RadProt-Bunker2:GD-03:</PREFIX>
+      <PREFIX>RadProt-Aux:GD-02:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
     <y>281</y>
@@ -40,7 +41,7 @@
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_3</name>
     <macros>
-      <PREFIX>RadProt-Bunker2:ND-01:</PREFIX>
+      <PREFIX>RadProt-Aux:GD-03:</PREFIX>
     </macros>
     <file>Embedded/dpu3_status.bob</file>
     <x>520</x>
@@ -51,6 +52,13 @@
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_4</name>
+    <macros>
+      <LOC>Aux</LOC>
+      <DET1>GD-00</DET1>
+      <DET2>GD-01</DET2>
+      <DET3>GD-02</DET3>
+      <DET4>GD-03</DET4>
+    </macros>
     <file>Embedded/limits.bob</file>
     <x>1040</x>
     <width>530</width>
@@ -62,23 +70,23 @@
       <action type="open_display">
         <file>../freia-symbols/display-builder/asyn/asynRecord.bob</file>
         <macros>
-          <P>ioc02-dpu3:</P>
           <R>asynRec</R>
+          <P>ioc30-dpu3:</P>
         </macros>
         <target>window</target>
         <description>asynRecord (for debugging)...</description>
       </action>
     </actions>
-    <pv_name>ioc02-dpu3:asynRec</pv_name>
+    <pv_name>ioc30-dpu3:asynRec</pv_name>
     <x>1200</x>
     <y>480</y>
     <width>220</width>
     <tooltip>$(actions)</tooltip>
   </widget>
-  <widget type="group" version="2.0.0">
+  <widget type="group" version="3.0.0">
     <name>   RecCaster Status</name>
     <macros>
-      <IOC>ioc02-dpu3</IOC>
+      <IOC>ioc30-dpu3</IOC>
     </macros>
     <x>1150</x>
     <y>360</y>
@@ -90,9 +98,13 @@
       </font>
     </font>
     <foreground_color>
-      <color name="PRIMARY-GROUP-BORDER" red="151" green="188" blue="202">
+      <color name="Read_Background" red="230" green="235" blue="232">
       </color>
     </foreground_color>
+    <line_color>
+      <color name="PRIMARY-GROUP-BORDER" red="151" green="188" blue="202">
+      </color>
+    </line_color>
     <background_color>
       <color name="Read_Background" red="230" green="235" blue="232">
       </color>

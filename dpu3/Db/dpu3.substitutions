@@ -1,0 +1,7 @@
+file "dpu3-det.template" { pattern
+{P      DET     ADDR    VER}
+{$(P)	$(DET1)	0	$(PROT_VER)}
+{$(P)	$(DET2)	1	$(PROT_VER)}
+{$(P)	$(DET3)	2	$(PROT_VER)}
+{$(P)	$(DET4)	3	$(PROT_VER)}
+}

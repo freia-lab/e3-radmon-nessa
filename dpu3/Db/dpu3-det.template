@@ -1,0 +1,203 @@
+record(stringin, "$(P)$(DET):sString") {
+   field (DESC, "Data $(DET)")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_data($(ADDR)) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
+}
+
+record(ai, "$(P)$(DET):sDevVer") {
+   field (DESC, "Detectorboard FW version number")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_dev_ver($(ADDR)) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "1 second")
+   field (PREC, "2")
+}
+
+record(stringin, "$(P)$(DET):sDevSer") {
+   field (DESC, "Serial number")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_dev_ser($(ADDR)) $(PORT)")
+   field (PINI, "YES")   
+   field (SCAN, "I/O Intr")
+}
+
+record(stringin, "$(P)$(DET):sDevCommSer") {
+   field (DESC, "Communication Serial Number (WRM) ")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_dev_comm_ser($(ADDR)) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+}
+
+record(mbbi, "$(P)$(DET):sDevMeas") {
+   field (DESC, "Measuring units")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_dev_measu($(ADDR)) $(PORT)")
+   field (SCAN, "I/O Intr")
+   field(UDFS, "NO_ALARM")
+   field(RRST, "???")
+   field(ONST, "mR/h")
+   field(TWST, "μSv/h")
+   field(THST, "μR/h")
+   field(FRST, "CPS")
+   field(FVST, "CPM")
+}
+
+record(ai, "$(P)$(DET):sAccDose") {
+   field (DESC, "Accumulated dose")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_dose_dosrt($(ADDR),$(P)$(DET):sDoseRt)  $(PORT)")
+   field (PINI, "YES")
+   field (EGU, "μSv")
+   field (SCAN, "I/O Intr")
+   field(PREC, "2")
+   field (ADEL, "1.0")
+   field(SDIS, "$(P)$(DET):sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+   info (autosaveFields, "ADEL")
+}
+
+record(ai, "$(P)$(DET):sDoseRt") {
+   field (DESC, "Dose rate")
+   field (EGU, "μSv/h")
+   field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HHSV, "MAJOR")
+   field (HYST, "2.0")
+   field (ADEL, "0.5")
+   field(SDIS, "$(P)$(DET):sThr1.VAL NPP MS")
+   field(DISV, "-1") # Will never disable, but will propagate severity
+   info (autosaveFields, "HIGH HIHI ADEL")
+}
+
+record(ai, "$(P)$(DET):sThr1") {
+   field (DESC, "Threshold 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),a)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+}
+
+record(ai, "$(P)$(DET):sThr2") {
+   field (DESC, "Threshold 2")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),b)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
+record(ai, "$(P)$(DET):sThrUsr") {
+   field (DESC, "User threshold")
+#   field (EGU, "μSv/h")
+   field(PREC, "2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),c)  $(PORT)")
+   field (SCAN, "1 second")
+   field (PINI, "YES")
+}
+
+
+##################################
+#STATUS BITS
+##################################
+
+record(mbbiDirect, "$(P)$(DET):sStatus1") {
+   field (DESC, "Status char 1")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_status1($(ADDR))  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)$(DET):sWRM_nomount")
+}
+
+record(mbbiDirect, "$(P)$(DET):sStatus2") {
+   field (DESC, "Status char 2")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_status2($(ADDR))  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)$(DET):sBckgrnd_lo")
+}
+
+record(mbbiDirect, "$(P)$(DET):sStatus3") {
+   field (DESC, "Status char 3")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_status3($(ADDR))  $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "I/O Intr")
+   field (FLNK, "$(P)$(DET):sRtOverflow")
+}
+
+record(bi, "$(P)$(DET):sWRM_nomount") {
+   field (DESC, "1 = WRM not mounted")
+   field (INP, "$(P)$(DET):sStatus1.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)$(DET):sVoltage_lo")
+}
+
+record(bi, "$(P)$(DET):sVoltage_lo") {
+   field (DESC, "1 = Voltage (Battery) Low")
+   field (INP, "$(P)$(DET):sStatus1.B1")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)$(DET):sBckgrnd_lo") {
+   field (DESC, "1 = Low background")
+   field (INP, "$(P)$(DET):sStatus2.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)$(DET):sDet_lo")
+}
+
+record(bi, "$(P)$(DET):sDet_lo") {
+   field (DESC, "1 = Low detector fault")
+   field (INP, "$(P)$(DET):sStatus2.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)$(DET):sDet_hi")
+}
+
+record(bi, "$(P)$(DET):sDet_hi") {
+   field (DESC, "1 = High detector fault")
+   field (INP, "$(P)$(DET):sStatus2.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)$(DET):sNoExtDet")
+}
+
+record(bi, "$(P)$(DET):sNoExtDet") {
+   field (DESC, "1 = No external detector detected")
+   field (INP, "$(P)$(DET):sStatus2.B3")
+   field (SCAN, "Passive")
+}
+
+record(bi, "$(P)$(DET):sRtOverflow") {
+   field (DESC, "1 = Rate overflow")
+   field (INP, "$(P)$(DET):sStatus3.B0")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)$(DET):sOvrThrshld")
+}
+
+record(bi, "$(P)$(DET):sOvrThrshld") {
+   field (DESC, "1 = Over threshold")
+   field (INP, "$(P)$(DET):sStatus3.B1")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)$(DET):sHiBckgrnd")
+}
+
+record(bi, "$(P)$(DET):sHiBckgrnd") {
+   field (DESC, "1 = High background")
+   field (INP, "$(P)$(DET):sStatus3.B2")
+   field (SCAN, "Passive")
+   field (FLNK, "$(P)$(DET):sLoHV")
+}
+
+record(bi, "$(P)$(DET):sLoHV") {
+   field (DESC, "1 = Low H.V")
+   field (INP, "$(P)$(DET):sStatus3.B3")
+   field (SCAN, "Passive")
+}
+

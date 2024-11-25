@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-11-22 17:58:24 by konrad-->
 <display version="2.0.0">
   <name>Alarm Levels</name>
   <macros>
@@ -15,10 +16,11 @@
   <grid_visible>false</grid_visible>
   <widget type="label" version="2.0.0">
     <name>Label Template</name>
-    <text>Bunker2 GD3</text>
+    <text>$(LOC) $(DET3)</text>
     <x>65</x>
     <y>234</y>
-    <height>23</height>
+    <width>107</width>
+    <height>21</height>
     <font>
       <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -42,10 +44,11 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label Template_1</name>
-    <text>Bunker2 ND1</text>
+    <text>$(LOC) $(DET4)</text>
     <x>65</x>
     <y>297</y>
-    <height>23</height>
+    <width>107</width>
+    <height>21</height>
     <font>
       <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -69,10 +72,11 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label Template_2</name>
-    <text>Bunker2 GD2</text>
+    <text>$(LOC) $(DET2)</text>
     <x>65</x>
     <y>171</y>
-    <height>23</height>
+    <width>107</width>
+    <height>21</height>
     <font>
       <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -96,10 +100,11 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label Template_3</name>
-    <text>Bunker2 GD1</text>
+    <text>$(LOC) $(DET1)</text>
     <x>65</x>
     <y>108</y>
-    <height>23</height>
+    <width>107</width>
+    <height>21</height>
     <font>
       <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -126,8 +131,8 @@
     <text>Alarm Levels</text>
     <x>193</x>
     <y>10</y>
-    <width>116</width>
-    <height>30</height>
+    <width>115</width>
+    <height>28</height>
     <font>
       <font family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
       </font>
@@ -154,8 +159,8 @@
     <text>Location</text>
     <x>70</x>
     <y>61</y>
-    <width>63</width>
-    <height>23</height>
+    <width>62</width>
+    <height>21</height>
     <font>
       <font family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -183,7 +188,7 @@
     <x>237</x>
     <y>59</y>
     <width>83</width>
-    <height>23</height>
+    <height>21</height>
     <font>
       <font family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -212,7 +217,7 @@
     <x>387</x>
     <y>59</y>
     <width>82</width>
-    <height>23</height>
+    <height>21</height>
     <font>
       <font family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -237,7 +242,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template</name>
-    <pv_name>$(P)-Bunker2:GD-01:sDoseRt.HIGH</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET1):sDoseRt.HIGH</pv_name>
     <x>233</x>
     <y>107</y>
     <width>96</width>
@@ -249,7 +254,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template_1</name>
-    <pv_name>$(P)-Bunker2:GD-01:sDoseRt.HIHI</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET1):sDoseRt.HIHI</pv_name>
     <x>383</x>
     <y>107</y>
     <width>96</width>
@@ -261,7 +266,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template_2</name>
-    <pv_name>$(P)-Bunker2:GD-02:sDoseRt.HIGH</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET2):sDoseRt.HIGH</pv_name>
     <x>233</x>
     <y>170</y>
     <width>96</width>
@@ -273,7 +278,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template_3</name>
-    <pv_name>$(P)-Bunker2:GD-03:sDoseRt.HIGH</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET3):sDoseRt.HIGH</pv_name>
     <x>233</x>
     <y>233</y>
     <width>96</width>
@@ -285,7 +290,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template_4</name>
-    <pv_name>$(P)-Bunker2:ND-01:sDoseRt.HIGH</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET4):sDoseRt.HIGH</pv_name>
     <x>233</x>
     <y>296</y>
     <width>96</width>
@@ -297,7 +302,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template_5</name>
-    <pv_name>$(P)-Bunker2:GD-02:sDoseRt.HIHI</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET2):sDoseRt.HIHI</pv_name>
     <x>383</x>
     <y>170</y>
     <width>96</width>
@@ -309,7 +314,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template_6</name>
-    <pv_name>$(P)-Bunker2:GD-03:sDoseRt.HIHI</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET3):sDoseRt.HIHI</pv_name>
     <x>383</x>
     <y>233</y>
     <width>96</width>
@@ -321,7 +326,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Input Template_7</name>
-    <pv_name>$(P)-Bunker2:ND-01:sDoseRt.HIHI</pv_name>
+    <pv_name>$(P)-$(LOC):$(DET4):sDoseRt.HIHI</pv_name>
     <x>383</x>
     <y>296</y>
     <width>96</width>
