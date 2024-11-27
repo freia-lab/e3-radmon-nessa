@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2024-11-27 14:24:38 by konrad-->
+<display version="2.0.0">
+  <name>dpu3_global</name>
+  <width>1500</width>
+  <height>250</height>
+  <widget type="group" version="3.0.0">
+    <name>Group_2</name>
+    <macros>
+      <S>sCal</S>
+    </macros>
+    <x>10</x>
+    <y>100</y>
+    <width>571</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(PREFIX)$(S)</pv_name>
+      <x>270</x>
+      <width>290</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>$(PREFIX)$(S).DESC</pv_name>
+      <width>190</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_3</name>
+    <macros>
+      <S>sFactors</S>
+    </macros>
+    <x>10</x>
+    <y>130</y>
+    <width>571</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_4</name>
+      <pv_name>$(PREFIX)$(S)</pv_name>
+      <x>270</x>
+      <width>290</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_5</name>
+      <pv_name>$(PREFIX)$(S).DESC</pv_name>
+      <width>190</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_4</name>
+    <macros>
+      <S>sBinOpt-all</S>
+    </macros>
+    <x>10</x>
+    <y>160</y>
+    <width>571</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_6</name>
+      <pv_name>$(PREFIX)$(S)</pv_name>
+      <x>270</x>
+      <width>290</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_7</name>
+      <pv_name>$(PREFIX)$(S).DESC</pv_name>
+      <width>190</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_5</name>
+    <macros>
+      <S>sTimInterv</S>
+    </macros>
+    <x>10</x>
+    <y>190</y>
+    <width>571</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;RadProt-Bunker2:DPU3:sWRM&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>RadProt-Bunker2:DPU3:sWRM.NAME</pv_name>
+      </rule>
+    </rules>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_8</name>
+      <pv_name>$(PREFIX)$(S)</pv_name>
+      <x>270</x>
+      <width>290</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_9</name>
+      <pv_name>$(PREFIX)$(S).DESC</pv_name>
+      <width>190</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_6</name>
+    <macros>
+      <S>sWRM</S>
+    </macros>
+    <x>10</x>
+    <y>220</y>
+    <width>571</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_10</name>
+      <pv_name>$(PREFIX)$(S)</pv_name>
+      <x>270</x>
+      <width>290</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_11</name>
+      <pv_name>$(PREFIX)$(S).DESC</pv_name>
+      <width>190</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_7</name>
+    <macros>
+      <S>sDRMconf</S>
+    </macros>
+    <x>10</x>
+    <y>20</y>
+    <width>640</width>
+    <height>70</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_12</name>
+      <pv_name>$(PREFIX)$(S).VAL$</pv_name>
+      <x>200</x>
+      <width>430</width>
+      <height>70</height>
+      <format>6</format>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>$(PREFIX)$(S).DESC</pv_name>
+      <width>190</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <macros>
+      <S>sBinOpt</S>
+    </macros>
+    <x>689</x>
+    <y>39</y>
+    <width>172</width>
+    <height>192</height>
+    <style>2</style>
+    <line_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="byte_monitor" version="2.0.0">
+      <name>Byte Monitor</name>
+      <pv_name>$(PREFIX)$(S)</pv_name>
+      <x>20</x>
+      <y>23</y>
+      <width>20</width>
+      <height>165</height>
+      <bitReverse>true</bitReverse>
+      <horizontal>false</horizontal>
+      <square>true</square>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>Dose
+Latch
+Upper LED
+Upper Buzzer
+Interlock (Relay)
+Sleep Mode
+Light
+Speaker</text>
+      <x>50</x>
+      <y>20</y>
+      <width>130</width>
+      <height>170</height>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_14</name>
+      <pv_name>$(PREFIX)$(S).DESC</pv_name>
+      <width>170</width>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+</display>

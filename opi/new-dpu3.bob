@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-25 15:57:15 by konrad-->
+<!--Saved on 2024-11-27 12:04:00 by konrad-->
 <display version="2.0.0">
   <name>New DPU3</name>
-  <width>2000</width>
-  <height>550</height>
-  <widget type="embedded" version="2.0.0">
-    <name>Embedded Display</name>
-    <macros>
-      <PREFIX>RadProt-Aux:GD-00:</PREFIX>
-    </macros>
-    <file>Embedded/dpu3_status.bob</file>
-    <y>5</y>
-    <width>500</width>
-    <height>250</height>
-    <resize>2</resize>
-  </widget>
+  <macros>
+    <PREFIX>RadProt-Aux:DPU3:</PREFIX>
+  </macros>
+  <width>1600</width>
+  <height>800</height>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display_1</name>
     <macros>
@@ -61,7 +53,7 @@
     </macros>
     <file>Embedded/limits.bob</file>
     <x>1040</x>
-    <width>530</width>
+    <width>510</width>
     <height>360</height>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -189,5 +181,27 @@
         </rule>
       </rules>
     </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <macros>
+      <PREFIX>RadProt-Aux:GD-00:</PREFIX>
+    </macros>
+    <file>Embedded/dpu3_status.bob</file>
+    <y>5</y>
+    <width>500</width>
+    <height>250</height>
+    <resize>2</resize>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <PREFIX>RadProt-Aux:DPU3:</PREFIX>
+    </macros>
+    <file>Embedded/dpu3_global.bob</file>
+    <x>10</x>
+    <y>530</y>
+    <width>1510</width>
+    <height>259</height>
   </widget>
 </display>

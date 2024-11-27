@@ -11,7 +11,3 @@ file "dpu3-gen.template" { pattern
 {$(P)	$(SCAN)	$(PROT_VER)}
 }
 
-file "dpu3-v2-gen.template" { pattern
-{P      SCAN    VER}
-{$(P)	$(SCAN)	$(PROT_VER)}
-}

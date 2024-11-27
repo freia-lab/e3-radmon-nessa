@@ -4,7 +4,7 @@ Terminator = 0x0D;
 #DEVICE ID
 
 get_dev_ver {
-   out "\n#1\$1A01\r";
+   out "\n#1\$1A01";
    in "\n#1\$1A09,%*3s,%f,%*10s,%*6s,%*i,";
 }
 
@@ -23,7 +23,7 @@ get_dev_measu {
 #CURRENT READING
 
 get_data {
-   out "\n#1\$1B01\r";
+   out "\n#1\$1B01";
    in "\n#1\$1B09%s";
 }
 
@@ -43,9 +43,35 @@ get_status3 {
    in "\n#1\$1B09,%*f,%*f,%*i,%*f,0%*c%*c%1i,";
 }
 
+reset_dose {
+   out "\n#1\$1Bh2";
+   in "\n#1\$1Bh9,%*f,";
+}
+
+#BINARY OPTIONS
+
+get_binopt {
+   out "\n#10D01";
+   in "\n#10D09,%x,";
+}
+
+#GLOBAL SETTINGS
+# H, I, J, K, L, M, O, Q, R, S, T, U don't work.
+# "\n#10P01" returns 1,0,0,rotem-rad,0086579691,
+# "\n#10V01" returns 127.0.0.1:5000:1,127.0.0.1:5000:3,127.0
+# "\n#10C01" returns 1,1.12,1.24
+# "\n#10E01" returns 1,
+# "\n#10F01" returns 10.00,20.00,50.00,10.0.0.200-0,
+# "\n#10G01" returns ZARO            ,04.11.24,04.11.25,
+
+get_global_data {
+   out "\n#10\$101";
+   in "\n#10\$109,%#s";
+}
+
 #THRESHOLDS
 
 get_threshold {
-   out "\n#1\$1F\$21\r";
+   out "\n#1\$1F\$21";
    in "\n#1\$1F\$29,%f,";
 }

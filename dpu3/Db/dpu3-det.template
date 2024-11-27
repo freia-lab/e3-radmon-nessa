@@ -3,7 +3,7 @@ record(stringin, "$(P)$(DET):sString") {
    field (DTYP, "stream")
    field (INP, "@dpu3-$(VER).proto get_data($(ADDR)) $(PORT)")
    field (PINI, "YES")
-   field (SCAN, "1 second")
+   field (SCAN, "$(SCAN)")
 }
 
 record(ai, "$(P)$(DET):sDevVer") {
@@ -11,7 +11,7 @@ record(ai, "$(P)$(DET):sDevVer") {
    field (DTYP, "stream")
    field (INP, "@dpu3-$(VER).proto get_dev_ver($(ADDR)) $(PORT)")
    field (PINI, "YES")
-   field (SCAN, "1 second")
+   field (SCAN, "$(SCAN)")
    field (PREC, "2")
 }
 
@@ -37,7 +37,7 @@ record(mbbi, "$(P)$(DET):sDevMeas") {
    field (INP, "@dpu3-$(VER).proto get_dev_measu($(ADDR)) $(PORT)")
    field (SCAN, "I/O Intr")
    field(UDFS, "NO_ALARM")
-   field(RRST, "???")
+   field(ZRST, "???")
    field(ONST, "mR/h")
    field(TWST, "μSv/h")
    field(THST, "μR/h")
@@ -76,7 +76,7 @@ record(ai, "$(P)$(DET):sThr1") {
    field (DESC, "Threshold 1")
    field (DTYP, "stream")
    field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),a)  $(PORT)")
-   field (SCAN, "1 second")
+   field (SCAN, "$(SCAN)")
    field (PINI, "YES")
 #   field (EGU, "μSv/h")
    field(PREC, "2")
@@ -88,7 +88,7 @@ record(ai, "$(P)$(DET):sThr2") {
    field(PREC, "2")
    field (DTYP, "stream")
    field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),b)  $(PORT)")
-   field (SCAN, "1 second")
+   field (SCAN, "$(SCAN)")
    field (PINI, "YES")
 }
 
@@ -98,7 +98,7 @@ record(ai, "$(P)$(DET):sThrUsr") {
    field(PREC, "2")
    field (DTYP, "stream")
    field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),c)  $(PORT)")
-   field (SCAN, "1 second")
+   field (SCAN, "$(SCAN)")
    field (PINI, "YES")
 }
 
@@ -199,5 +199,14 @@ record(bi, "$(P)$(DET):sLoHV") {
    field (DESC, "1 = Low H.V")
    field (INP, "$(P)$(DET):sStatus3.B3")
    field (SCAN, "Passive")
+}
+
+# Write data
+
+record(bo, "$(P)$(DET):AccDoseRst") {
+   field (DESC, "Reset Accumulated Dose")
+   field (DTYP, "stream")
+   field (UDFS, "NO_ALARM")
+   field (OUT, "@dpu3-$(VER).proto reset_dose($(ADDR))  $(PORT)")
 }
 

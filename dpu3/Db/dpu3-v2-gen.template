@@ -1,0 +1,7 @@
+record(stringin, "$(P)DPU3:sTimInterv") {
+   field (DESC, "Time value intervals")
+   field (DTYP, "stream")
+   field (INP, "@dpu3-$(VER).proto get_global_data(E) $(PORT)")
+   field (PINI, "YES")
+   field (SCAN, "$(SCAN)")
+}

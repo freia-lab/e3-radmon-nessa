@@ -15,7 +15,6 @@
 #-
 #- >> Optional
 #- SCAN_PERIOD	  - SCAN field in the epics record, default 1
-#- PROT_VERSION	  - protocol version (default v2)
 #-
 #- https://epics.anl.gov/modules/soft/asyn/R4-29/asynDriver.html#drvAsynIPPort
 #- 
@@ -44,4 +43,4 @@ drvAsynIPPortConfigure($(DPU3_NAME), $(DPU3_INET):$(DPU3_PORT),$(DPU3_PRIORITY),
 epicsEnvSet("STREAM_PROTOCOL_PATH","$(dpu3_DB)")
 
 #Load your database defining the EPICS records
-dbLoadRecords("dpu3.db", "PORT=$(DPU3_NAME),P=$(DPU3_PREFIX),DET1=$(DET1),DET2=$(DET2),DET3=$(DET3),DET4=$(DET4),PROT_VER=$(PROT_VER=v2),SCAN=$(SCAN_PERIOD='1 second')")
+dbLoadRecords("dpu3-v1.db", "PORT=$(DPU3_NAME),P=$(DPU3_PREFIX),DET1=$(DET1),DET2=$(DET2),DET3=$(DET3),DET4=$(DET4),PROT_VER=v1,SCAN=$(SCAN_PERIOD='1 second')")

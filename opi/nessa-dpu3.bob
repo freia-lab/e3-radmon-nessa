@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-25 15:54:09 by konrad-->
+<!--Saved on 2024-11-27 12:05:39 by konrad-->
 <display version="2.0.0">
   <name>NESSA DPU3</name>
-  <width>2000</width>
-  <height>550</height>
+  <width>1600</width>
+  <height>800</height>
   <widget type="embedded" version="2.0.0">
     <name>Embedded Display</name>
     <macros>
@@ -189,5 +189,16 @@
         </rule>
       </rules>
     </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_5</name>
+    <macros>
+      <PREFIX>RadProt-Bunker2:DPU3:</PREFIX>
+    </macros>
+    <file>Embedded/dpu3_global.bob</file>
+    <x>10</x>
+    <y>530</y>
+    <width>1510</width>
+    <height>259</height>
   </widget>
 </display>
