@@ -1,7 +1,7 @@
 record(longin, "$(P)DPU3:sBinOpt-all") {
    field (DESC, "Binary options in decimal")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_binopt $(PORT)")
+   field (INP, "@dpu3.proto get_binopt $(PORT)")
    field (PINI, "YES")
    field (SCAN, "$(SCAN)")
    field (FLNK, "$(P)DPU3:sBinOpt")
@@ -15,7 +15,7 @@ record(mbbiDirect, "$(P)DPU3:sBinOpt") {
 record(stringin, "$(P)DPU3:sCal") {
    field (DESC, "Calibration data")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_global_data(G) $(PORT)")
+   field (INP, "@dpu3.proto get_global_data(G) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "$(SCAN)")
 }
@@ -23,7 +23,7 @@ record(stringin, "$(P)DPU3:sCal") {
 record(stringin, "$(P)DPU3:sFactors") {
    field (DESC, "Factors")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_global_data(C) $(PORT)")
+   field (INP, "@dpu3.proto get_global_data(C) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "$(SCAN)")
 }
@@ -31,7 +31,7 @@ record(stringin, "$(P)DPU3:sFactors") {
 record(stringin, "$(P)DPU3:sWRM") {
    field (DESC, "WLAN det. transmission")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_global_data(P) $(PORT)")
+   field (INP, "@dpu3.proto get_global_data(P) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "$(SCAN)")
 }
@@ -40,7 +40,7 @@ record(lsi, "$(P)DPU3:sDRMconf") {
    field (DESC, "DRM configuration")
    field (DTYP, "stream")
    field (SIZV, "256")
-   field (INP, "@dpu3-$(VER).proto get_global_data(V) $(PORT)")
+   field (INP, "@dpu3.proto get_global_data(V) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "$(SCAN)")
 }

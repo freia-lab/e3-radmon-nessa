@@ -15,3 +15,15 @@ file "dpu3-v2-gen.template" { pattern
 {P      SCAN    VER}
 {$(P)	$(SCAN)	$(PROT_VER)}
 }
+
+file "dpu3-setbinopt.template" { pattern
+{P      VER          ZNAM     ONAM       INDX  SIG       DESC}
+{$(P)	$(PROT_VER)  Off      On	 a     Dose	 "?"}
+{$(P)	$(PROT_VER)  Off      On	 b     Latch	 "Latch On/Off"}
+{$(P)	$(PROT_VER)  Off      On	 c     LED	 "Upper LED On/Off"}
+{$(P)	$(PROT_VER)  Off      On	 d     Buzzer	 "Upper buzzer On/Off"}
+{$(P)	$(PROT_VER)  Off      On	 e     Intlk	 "Interlock relay On/Off"}
+{$(P)	$(PROT_VER)  Off      On	 f     SleepMod	 "Sleep mode On/Off"}
+{$(P)	$(PROT_VER)  Off      On	 g     Light	 "Light On/Off"}
+{$(P)	$(PROT_VER)  Off      On	 h     Speaker	 "Speaker On/Off"}
+}

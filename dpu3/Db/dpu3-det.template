@@ -1,15 +1,16 @@
 record(stringin, "$(P)$(DET):sString") {
    field (DESC, "Data $(DET)")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_data($(ADDR)) $(PORT)")
+   field (INP, "@dpu3.proto get_data($(ADDR)) $(PORT)")
    field (PINI, "YES")
+   field (SDIS, "$(P)$(DET):cDisable")
    field (SCAN, "$(SCAN)")
 }
 
 record(ai, "$(P)$(DET):sDevVer") {
    field (DESC, "Detectorboard FW version number")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_dev_ver($(ADDR)) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_ver-$(VER)($(ADDR)) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "$(SCAN)")
    field (PREC, "2")
@@ -18,7 +19,7 @@ record(ai, "$(P)$(DET):sDevVer") {
 record(stringin, "$(P)$(DET):sDevSer") {
    field (DESC, "Serial number")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_dev_ser($(ADDR)) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_ser($(ADDR)) $(PORT)")
    field (PINI, "YES")   
    field (SCAN, "I/O Intr")
 }
@@ -26,7 +27,7 @@ record(stringin, "$(P)$(DET):sDevSer") {
 record(stringin, "$(P)$(DET):sDevCommSer") {
    field (DESC, "Communication Serial Number (WRM) ")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_dev_comm_ser($(ADDR)) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_comm_ser($(ADDR)) $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
 }
@@ -34,7 +35,7 @@ record(stringin, "$(P)$(DET):sDevCommSer") {
 record(mbbi, "$(P)$(DET):sDevMeas") {
    field (DESC, "Measuring units")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_dev_measu($(ADDR)) $(PORT)")
+   field (INP, "@dpu3.proto get_dev_measu($(ADDR)) $(PORT)")
    field (SCAN, "I/O Intr")
    field(UDFS, "NO_ALARM")
    field(ZRST, "???")
@@ -48,7 +49,7 @@ record(mbbi, "$(P)$(DET):sDevMeas") {
 record(ai, "$(P)$(DET):sAccDose") {
    field (DESC, "Accumulated dose")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_dose_dosrt($(ADDR),$(P)$(DET):sDoseRt)  $(PORT)")
+   field (INP, "@dpu3.proto get_dose_dosrt($(ADDR),$(P)$(DET):sDoseRt)  $(PORT)")
    field (PINI, "YES")
    field (EGU, "μSv")
    field (SCAN, "I/O Intr")
@@ -75,31 +76,55 @@ record(ai, "$(P)$(DET):sDoseRt") {
 record(ai, "$(P)$(DET):sThr1") {
    field (DESC, "Threshold 1")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),a)  $(PORT)")
+   field (INP, "@dpu3.proto get_threshold-$(VER)($(ADDR),a)  $(PORT)")
    field (SCAN, "$(SCAN)")
    field (PINI, "YES")
-#   field (EGU, "μSv/h")
+   field (EGU, "μSv/h")
    field(PREC, "2")
+}
+record(ao, "$(P)$(DET):cThr1") {
+   field (DESC, "Threshold 1")
+   field (DTYP, "stream")
+   field (OUT, "@dpu3.proto set_threshold($(ADDR),a)  $(PORT)")
+   field (EGU, "μSv/h")
+   field(PREC, "2")
+   info (autosaveFields, "VAL")
 }
 
 record(ai, "$(P)$(DET):sThr2") {
    field (DESC, "Threshold 2")
-#   field (EGU, "μSv/h")
+   field (EGU, "μSv/h")
    field(PREC, "2")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),b)  $(PORT)")
+   field (INP, "@dpu3.proto get_threshold-$(VER)($(ADDR),b)  $(PORT)")
    field (SCAN, "$(SCAN)")
    field (PINI, "YES")
+}
+record(ao, "$(P)$(DET):cThr2") {
+   field (DESC, "Threshold 2")
+   field (DTYP, "stream")
+   field (OUT, "@dpu3.proto set_threshold($(ADDR),b)  $(PORT)")
+   field (EGU, "μSv/h")
+   field(PREC, "2")
+   info (autosaveFields, "VAL")
 }
 
 record(ai, "$(P)$(DET):sThrUsr") {
    field (DESC, "User threshold")
-#   field (EGU, "μSv/h")
+   field (EGU, "μSv/h")
    field(PREC, "2")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_threshold($(ADDR),c)  $(PORT)")
+   field (INP, "@dpu3.proto get_threshold-$(VER)($(ADDR),c)  $(PORT)")
    field (SCAN, "$(SCAN)")
    field (PINI, "YES")
+}
+record(ao, "$(P)$(DET):cThrUsr") {
+   field (DESC, "User threshold")
+   field (DTYP, "stream")
+   field (OUT, "@dpu3.proto set_threshold($(ADDR),c)  $(PORT)")
+   field (EGU, "μSv/h")
+   field(PREC, "2")
+   info (autosaveFields, "VAL")
 }
 
 
@@ -110,7 +135,7 @@ record(ai, "$(P)$(DET):sThrUsr") {
 record(mbbiDirect, "$(P)$(DET):sStatus1") {
    field (DESC, "Status char 1")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_status1($(ADDR))  $(PORT)")
+   field (INP, "@dpu3.proto get_status1($(ADDR))  $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
    field (FLNK, "$(P)$(DET):sWRM_nomount")
@@ -119,7 +144,7 @@ record(mbbiDirect, "$(P)$(DET):sStatus1") {
 record(mbbiDirect, "$(P)$(DET):sStatus2") {
    field (DESC, "Status char 2")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_status2($(ADDR))  $(PORT)")
+   field (INP, "@dpu3.proto get_status2($(ADDR))  $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
    field (FLNK, "$(P)$(DET):sBckgrnd_lo")
@@ -128,7 +153,7 @@ record(mbbiDirect, "$(P)$(DET):sStatus2") {
 record(mbbiDirect, "$(P)$(DET):sStatus3") {
    field (DESC, "Status char 3")
    field (DTYP, "stream")
-   field (INP, "@dpu3-$(VER).proto get_status3($(ADDR))  $(PORT)")
+   field (INP, "@dpu3.proto get_status3($(ADDR))  $(PORT)")
    field (PINI, "YES")
    field (SCAN, "I/O Intr")
    field (FLNK, "$(P)$(DET):sRtOverflow")
@@ -207,6 +232,15 @@ record(bo, "$(P)$(DET):AccDoseRst") {
    field (DESC, "Reset Accumulated Dose")
    field (DTYP, "stream")
    field (UDFS, "NO_ALARM")
-   field (OUT, "@dpu3-$(VER).proto reset_dose($(ADDR))  $(PORT)")
+   field (OUT, "@dpu3.proto reset_dose($(ADDR))  $(PORT)")
 }
 
+record(bo, "$(P)$(DET):cDisable") {
+   field (DESC, "Disable detector read-out")
+   field (UDFS, "NO_ALARM")
+   field (ZNAM, "Enabled")
+   field (ONAM, "Disabled")
+   field (OSV, "MINOR")
+   field (PINI, "YES")
+   info (autosaveFields, "VAL")
+}

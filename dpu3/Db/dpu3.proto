@@ -1,9 +1,14 @@
 # dpu3-v2.proto for DPU3
 Terminator = 0x0D;
+ReplyTimeout = 1500;
 
 #DEVICE ID
 
-get_dev_ver {
+get_dev_ver-v1 {
+   out "\n#1\$1A01";
+   in "\n#1\$1A09,%*3s,%f,%*10s,%*6s,%*i";
+}
+get_dev_ver-v2 {
    out "\n#1\$1A01";
    in "\n#1\$1A09,%*3s,%f,%*10s,%*6s,%*i,";
 }
@@ -55,6 +60,10 @@ get_binopt {
    in "\n#10D09,%x,";
 }
 
+set_binopt {
+   out "\n#10D\$12%i,";
+}
+
 #GLOBAL SETTINGS
 # H, I, J, K, L, M, O, Q, R, S, T, U don't work.
 # "\n#10P01" returns 1,0,0,rotem-rad,0086579691,
@@ -71,7 +80,15 @@ get_global_data {
 
 #THRESHOLDS
 
-get_threshold {
+get_threshold-v1 {
+   out "\n#1\$1F\$21";
+   in "\n#1\$1F\$29,%f";
+}
+get_threshold-v2 {
    out "\n#1\$1F\$21";
    in "\n#1\$1F\$29,%f,";
+}
+
+set_threshold {
+   out "\n#1\$1F\$22,%8.2f,";
 }

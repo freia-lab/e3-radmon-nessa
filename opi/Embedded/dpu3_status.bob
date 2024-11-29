@@ -1,188 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-26 11:47:42 by konrad-->
+<!--Saved on 2024-11-29 09:32:07 by konrad-->
 <display version="2.0.0">
   <name>Nessa status</name>
   <width>500</width>
   <height>250</height>
-  <widget type="led" version="2.0.0">
-    <name>LED_2</name>
-    <pv_name>$(PREFIX)sVoltage_lo</pv_name>
-    <x>46</x>
-    <y>49</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 = Voltage battery low</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_3</name>
-    <pv_name>$(PREFIX)sWRM_nomount</pv_name>
-    <x>65</x>
-    <y>49</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <labels_from_pv>true</labels_from_pv>
-    <tooltip>1 = WRM not mounted</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_4</name>
-    <pv_name>$(PREFIX)sNoExtDet</pv_name>
-    <x>10</x>
-    <y>67</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 = No external detector detected</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_5</name>
-    <pv_name>$(PREFIX)sDet_hi</pv_name>
-    <x>28</x>
-    <y>67</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 = High detector fault</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_6</name>
-    <pv_name>$(PREFIX)sDet_lo</pv_name>
-    <x>46</x>
-    <y>67</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 =Low detector fault</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_7</name>
-    <pv_name>$(PREFIX)sBckgrnd_lo</pv_name>
-    <x>65</x>
-    <y>67</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1= Low background</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_8</name>
-    <pv_name>$(PREFIX)sLoHV</pv_name>
-    <x>10</x>
-    <y>86</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 = Low H.V</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_9</name>
-    <pv_name>$(PREFIX)sHiBckgrnd</pv_name>
-    <x>28</x>
-    <y>86</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 = High background</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_10</name>
-    <pv_name>$(PREFIX)sOvrThrshld</pv_name>
-    <x>46</x>
-    <y>86</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 = Over threshold</tooltip>
-  </widget>
-  <widget type="led" version="2.0.0">
-    <name>LED_11</name>
-    <pv_name>$(PREFIX)sRtOverflow</pv_name>
-    <x>65</x>
-    <y>86</y>
-    <width>15</width>
-    <height>15</height>
-    <on_color>
-      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
-      </color>
-    </on_color>
-    <tooltip>1 = Rate overflow</tooltip>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group_4</name>
-    <macros>
-      <PV_NAME>$(PREFIX)sAccDose</PV_NAME>
-    </macros>
-    <x>91</x>
-    <y>49</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_31</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_32</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group_5</name>
-    <macros>
-      <PV_NAME>$(PREFIX)sDoseRt</PV_NAME>
-    </macros>
-    <x>91</x>
-    <y>89</y>
-    <width>385</width>
-    <height>22</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_33</name>
-      <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
-      <height>22</height>
-      <horizontal_alignment>1</horizontal_alignment>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update_34</name>
-      <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
-    </widget>
-  </widget>
+  <background_color>
+    <color name="OK" red="61" green="216" blue="61">
+    </color>
+  </background_color>
+  <rules>
+    <rule name="BackgroundColor" prop_id="background_color" out_exp="false">
+      <exp bool_exp="pv0 &gt; pv2">
+        <value>
+          <color name="ERROR" red="252" green="13" blue="27">
+          </color>
+        </value>
+      </exp>
+      <exp bool_exp="pv0 &gt; pv1">
+        <value>
+          <color name="WARNING" red="252" green="242" blue="17">
+          </color>
+        </value>
+      </exp>
+      <pv_name>$(PREFIX)sDoseRt</pv_name>
+      <pv_name>$(PREFIX)sThr1</pv_name>
+      <pv_name>$(PREFIX)sThr2</pv_name>
+    </rule>
+  </rules>
   <widget type="group" version="3.0.0">
     <name>Group_16</name>
     <macros>
@@ -197,14 +41,19 @@
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_55</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>160</width>
       <height>22</height>
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_56</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>170</x>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry</name>
+      <pv_name>$(PREFIX)cThr1</pv_name>
+      <x>280</x>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
@@ -221,14 +70,19 @@
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_57</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>160</width>
       <height>22</height>
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_58</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>170</x>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_1</name>
+      <pv_name>$(PREFIX)cThr2</pv_name>
+      <x>280</x>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
@@ -245,14 +99,19 @@
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_59</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>280</width>
+      <width>160</width>
       <height>22</height>
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_60</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>285</x>
+      <x>170</x>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_2</name>
+      <pv_name>$(PREFIX)cThrUsr</pv_name>
+      <x>280</x>
     </widget>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -266,9 +125,17 @@
     </actions>
     <text>Device ID</text>
     <x>7</x>
-    <y>111</y>
+    <y>120</y>
     <width>70</width>
     <height>32</height>
+    <rules>
+      <rule name="Vis" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvStr0 = &quot;012345&quot;">
+          <value>false</value>
+        </exp>
+        <pv_name>$(PREFIX)sDevCommSer</pv_name>
+      </rule>
+    </rules>
     <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="group" version="3.0.0">
@@ -285,15 +152,15 @@
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_47</name>
       <pv_name>$(PV_NAME).DESC</pv_name>
-      <width>251</width>
+      <width>200</width>
       <height>22</height>
       <horizontal_alignment>1</horizontal_alignment>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_48</name>
       <pv_name>$(PV_NAME)</pv_name>
-      <x>277</x>
-      <width>190</width>
+      <x>210</x>
+      <width>255</width>
     </widget>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -307,10 +174,246 @@
     </actions>
     <pv_name>$(PREFIX)AccDoseRst</pv_name>
     <x>7</x>
-    <y>154</y>
+    <y>170</y>
     <width>70</width>
     <height>58</height>
     <tooltip>$(actions)</tooltip>
     <show_confirm_dialog>true</show_confirm_dialog>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>DIsable
+detector
+read-out</text>
+    <x>390</x>
+    <y>50</y>
+    <width>60</width>
+    <height>82</height>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box</name>
+    <pv_name>$(PREFIX)cDisable</pv_name>
+    <label></label>
+    <x>465</x>
+    <y>70</y>
+    <width>22</width>
+    <height>22</height>
+    <tooltip>$(pv_name)
+$(pv_value)
+Check when the detector is not connected to DPU3.</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Det-reddout</name>
+    <x>10</x>
+    <y>49</y>
+    <width>361</width>
+    <height>62</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="Vis" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 = 1">
+          <value>false</value>
+        </exp>
+        <pv_name>$(PREFIX)cDisable</pv_name>
+      </rule>
+    </rules>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>$(PREFIX)sVoltage_lo</pv_name>
+      <x>36</x>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 = Voltage battery low</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_3</name>
+      <pv_name>$(PREFIX)sWRM_nomount</pv_name>
+      <x>55</x>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <labels_from_pv>true</labels_from_pv>
+      <tooltip>1 = WRM not mounted</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_4</name>
+      <pv_name>$(PREFIX)sNoExtDet</pv_name>
+      <y>18</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 = No external detector detected</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_5</name>
+      <pv_name>$(PREFIX)sDet_hi</pv_name>
+      <x>18</x>
+      <y>18</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 = High detector fault</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_6</name>
+      <pv_name>$(PREFIX)sDet_lo</pv_name>
+      <x>36</x>
+      <y>18</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 =Low detector fault</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_7</name>
+      <pv_name>$(PREFIX)sBckgrnd_lo</pv_name>
+      <x>55</x>
+      <y>18</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1= Low background</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_8</name>
+      <pv_name>$(PREFIX)sLoHV</pv_name>
+      <y>37</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 = Low H.V</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_9</name>
+      <pv_name>$(PREFIX)sHiBckgrnd</pv_name>
+      <x>18</x>
+      <y>37</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 = High background</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_10</name>
+      <pv_name>$(PREFIX)sOvrThrshld</pv_name>
+      <x>36</x>
+      <y>37</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 = Over threshold</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_11</name>
+      <pv_name>$(PREFIX)sRtOverflow</pv_name>
+      <x>55</x>
+      <y>37</y>
+      <width>15</width>
+      <height>15</height>
+      <on_color>
+        <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+        </color>
+      </on_color>
+      <tooltip>1 = Rate overflow</tooltip>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_4</name>
+      <macros>
+        <PV_NAME>$(PREFIX)sAccDose</PV_NAME>
+      </macros>
+      <x>81</x>
+      <width>280</width>
+      <height>22</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_31</name>
+        <pv_name>$(PV_NAME).DESC</pv_name>
+        <width>160</width>
+        <height>22</height>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_32</name>
+        <pv_name>$(PV_NAME)</pv_name>
+        <x>170</x>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_5</name>
+      <macros>
+        <PV_NAME>$(PREFIX)sDoseRt</PV_NAME>
+      </macros>
+      <x>81</x>
+      <y>40</y>
+      <width>280</width>
+      <height>22</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_33</name>
+        <pv_name>$(PV_NAME).DESC</pv_name>
+        <width>160</width>
+        <height>22</height>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_34</name>
+        <pv_name>$(PV_NAME)</pv_name>
+        <x>170</x>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Disabled</text>
+    <x>10</x>
+    <y>50</y>
+    <width>360</width>
+    <height>60</height>
+    <visible>false</visible>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="Vis" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 = 1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(PREFIX)cDisable</pv_name>
+      </rule>
+    </rules>
   </widget>
 </display>
