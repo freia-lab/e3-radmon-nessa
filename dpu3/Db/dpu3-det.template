@@ -73,6 +73,27 @@ record(ai, "$(P)$(DET):sDoseRt") {
    info (autosaveFields, "HIGH HIHI ADEL")
 }
 
+# Utility record to show the radiation alarms - different limits depending
+# on if the area is cleared or not
+record(calc, "$(P)$(DET):sDoseRtAlarm") {
+   field (DESC, "Dose rate alarm")
+   field (SCAN, "1 second")
+   field (INPA, "$(P)$(DET):sDoseRt")
+   field (INPB, "$(P)$(DET):sDoseRt.SEVR")
+   field (INPC, "$(AREA_CLEARED_STAT)")
+   field (INPD, "$(P)$(DET):sDoseRt.HIGH")
+   field (INPE, "$(P)$(DET):sDoseRt.HIHI")
+   field (INPF, "2")
+   field (INPG, "10")
+   field (CALC, "C=10?((A>G)?2:((A>F)?1:0)):B")
+   field (PREC, "2")
+   field (HSV, "MINOR")
+   field (HIGH, "0.5")
+   field (HHSV, "MAJOR")
+   field (HIHI, "1.5")
+   info (autosaveFields, "F G")
+}
+
 record(ai, "$(P)$(DET):sThr1") {
    field (DESC, "Threshold 1")
    field (DTYP, "stream")

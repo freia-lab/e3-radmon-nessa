@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-22 17:58:24 by konrad-->
 <display version="2.0.0">
   <name>Alarm Levels</name>
   <macros>
     <P>RadProt</P>
   </macros>
   <width>500</width>
-  <height>337</height>
+  <height>370</height>
   <background_color>
     <color name="BACKGROUND" red="220" green="225" blue="221">
     </color>
@@ -16,11 +15,13 @@
   <grid_visible>false</grid_visible>
   <widget type="label" version="2.0.0">
     <name>Label Template</name>
-    <text>$(LOC) $(DET3)</text>
+    <text>$(LOC) $(DET3)
+free access:
+$(LOC) cleared:</text>
     <x>65</x>
-    <y>234</y>
-    <width>107</width>
-    <height>21</height>
+    <y>213</y>
+    <width>109</width>
+    <height>67</height>
     <font>
       <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -44,11 +45,13 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label Template_1</name>
-    <text>$(LOC) $(DET4)</text>
+    <text>$(LOC) $(DET4)
+free acess:
+$(LOC) cleared:</text>
     <x>65</x>
-    <y>297</y>
-    <width>107</width>
-    <height>21</height>
+    <y>293</y>
+    <width>109</width>
+    <height>67</height>
     <font>
       <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -72,11 +75,13 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label Template_2</name>
-    <text>$(LOC) $(DET2)</text>
+    <text>$(LOC) $(DET2)
+free access:
+$(LOC) cleared:</text>
     <x>65</x>
-    <y>171</y>
-    <width>107</width>
-    <height>21</height>
+    <y>133</y>
+    <width>109</width>
+    <height>67</height>
     <font>
       <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
       </font>
@@ -102,7 +107,7 @@
     <name>Label Template_3</name>
     <text>$(LOC) $(DET1)</text>
     <x>65</x>
-    <y>108</y>
+    <y>98</y>
     <width>107</width>
     <height>21</height>
     <font>
@@ -132,7 +137,7 @@
     <x>193</x>
     <y>10</y>
     <width>115</width>
-    <height>28</height>
+    <height>27</height>
     <font>
       <font family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
       </font>
@@ -244,7 +249,7 @@
     <name>Text Input Template</name>
     <pv_name>$(P)-$(LOC):$(DET1):sDoseRt.HIGH</pv_name>
     <x>233</x>
-    <y>107</y>
+    <y>97</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -256,7 +261,7 @@
     <name>Text Input Template_1</name>
     <pv_name>$(P)-$(LOC):$(DET1):sDoseRt.HIHI</pv_name>
     <x>383</x>
-    <y>107</y>
+    <y>97</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -268,7 +273,7 @@
     <name>Text Input Template_2</name>
     <pv_name>$(P)-$(LOC):$(DET2):sDoseRt.HIGH</pv_name>
     <x>233</x>
-    <y>170</y>
+    <y>155</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -280,7 +285,7 @@
     <name>Text Input Template_3</name>
     <pv_name>$(P)-$(LOC):$(DET3):sDoseRt.HIGH</pv_name>
     <x>233</x>
-    <y>233</y>
+    <y>235</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -292,7 +297,7 @@
     <name>Text Input Template_4</name>
     <pv_name>$(P)-$(LOC):$(DET4):sDoseRt.HIGH</pv_name>
     <x>233</x>
-    <y>296</y>
+    <y>315</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -304,7 +309,7 @@
     <name>Text Input Template_5</name>
     <pv_name>$(P)-$(LOC):$(DET2):sDoseRt.HIHI</pv_name>
     <x>383</x>
-    <y>170</y>
+    <y>155</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -316,7 +321,7 @@
     <name>Text Input Template_6</name>
     <pv_name>$(P)-$(LOC):$(DET3):sDoseRt.HIHI</pv_name>
     <x>383</x>
-    <y>233</y>
+    <y>235</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -328,7 +333,7 @@
     <name>Text Input Template_7</name>
     <pv_name>$(P)-$(LOC):$(DET4):sDoseRt.HIHI</pv_name>
     <x>383</x>
-    <y>296</y>
+    <y>315</y>
     <width>96</width>
     <height>21</height>
     <precision>2</precision>
@@ -345,7 +350,7 @@
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="0.0" y="242.0">
+      <point x="0.0" y="280.0">
       </point>
     </points>
     <line_width>1</line_width>
@@ -367,7 +372,7 @@ $(pv_value)</tooltip>
     <points>
       <point x="0.0" y="0.0">
       </point>
-      <point x="0.0" y="242.0">
+      <point x="0.0" y="280.0">
       </point>
     </points>
     <line_width>1</line_width>
@@ -401,5 +406,77 @@ $(pv_value)</tooltip>
     </actions>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input Template_8</name>
+    <pv_name>$(P)-$(LOC):$(DET2):sDoseRtAlarm.F</pv_name>
+    <x>233</x>
+    <y>179</y>
+    <width>96</width>
+    <height>21</height>
+    <precision>2</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input Template_9</name>
+    <pv_name>$(P)-$(LOC):$(DET2):sDoseRtAlarm.G</pv_name>
+    <x>383</x>
+    <y>179</y>
+    <width>96</width>
+    <height>21</height>
+    <precision>2</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input Template_10</name>
+    <pv_name>$(P)-$(LOC):$(DET3):sDoseRtAlarm.F</pv_name>
+    <x>233</x>
+    <y>259</y>
+    <width>96</width>
+    <height>21</height>
+    <precision>2</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input Template_11</name>
+    <pv_name>$(P)-$(LOC):$(DET3):sDoseRtAlarm.G</pv_name>
+    <x>383</x>
+    <y>259</y>
+    <width>96</width>
+    <height>21</height>
+    <precision>2</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input Template_12</name>
+    <pv_name>$(P)-$(LOC):$(DET4):sDoseRtAlarm.F</pv_name>
+    <x>233</x>
+    <y>339</y>
+    <width>96</width>
+    <height>21</height>
+    <precision>2</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Input Template_13</name>
+    <pv_name>$(P)-$(LOC):$(DET4):sDoseRtAlarm.G</pv_name>
+    <x>383</x>
+    <y>339</y>
+    <width>96</width>
+    <height>21</height>
+    <precision>2</precision>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
 </display>

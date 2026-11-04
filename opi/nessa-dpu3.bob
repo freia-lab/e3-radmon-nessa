@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-11-27 12:05:39 by konrad-->
 <display version="2.0.0">
   <name>NESSA DPU3</name>
   <width>1600</width>
@@ -62,24 +61,24 @@
     <file>Embedded/limits.bob</file>
     <x>1040</x>
     <width>530</width>
-    <height>360</height>
+    <height>380</height>
   </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
     <actions>
       <action type="open_display">
+        <description>asynRecord (for debugging)...</description>
         <file>../freia-symbols/display-builder/asyn/asynRecord.bob</file>
         <macros>
           <P>ioc02-dpu3:</P>
           <R>asynRec</R>
         </macros>
         <target>window</target>
-        <description>asynRecord (for debugging)...</description>
       </action>
     </actions>
     <pv_name>ioc02-dpu3:asynRec</pv_name>
     <x>1200</x>
-    <y>480</y>
+    <y>500</y>
     <width>220</width>
     <tooltip>$(actions)</tooltip>
   </widget>
@@ -89,7 +88,7 @@
       <IOC>ioc02-dpu3</IOC>
     </macros>
     <x>1150</x>
-    <y>360</y>
+    <y>380</y>
     <width>328</width>
     <height>110</height>
     <style>1</style>
